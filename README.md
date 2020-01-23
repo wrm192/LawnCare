@@ -1,4 +1,4 @@
-Repository for LawnCare mobile app for Jason Trask.
+Repository for LawnCare mobile app for Jayson Trask.
 
 Created by:
 
