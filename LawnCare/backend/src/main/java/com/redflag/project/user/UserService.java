@@ -7,6 +7,7 @@ import java.util.UUID;
 @Service
 public class UserService {
 
+
     public User getUser(UUID id) {
         return null;
     }

@@ -2,11 +2,9 @@ package com.redflag.project.user;
 
 import com.redflag.project.common.ApiConstants;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.UUID;
 
 @RestController
 @RequestMapping(ApiConstants.API_BASE + "user")
@@ -19,9 +17,10 @@ public class UserController {
         this.userService = userService;
     }
 
-    @RequestMapping(method=RequestMethod.GET)
-    public User find(UUID id) {
-        return  userService.getUser(id);
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public String find() {
+        return  "This is the user -- temp";
     }
 
 }

@@ -1,12 +1,9 @@
 package com.redflag.project.common;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.UUID;
 
-@Entity
+@MappedSuperclass
 public class BaseEntity {
 
     @Id
@@ -20,5 +17,12 @@ public class BaseEntity {
 
     public void setId(UUID id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "BaseEntity{" +
+                "id=" + id +
+                '}';
     }
 }

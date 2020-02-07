@@ -2,7 +2,6 @@ package com.redflag.project.common;
 
 import org.springframework.stereotype.Repository;
 
-import java.util.UUID;
-
+@Repository
 public interface BaseEntityRepository<T extends BaseEntity> {
 }
