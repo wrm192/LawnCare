@@ -1,9 +1,11 @@
 package com.redflag.project.user;
 
-import com.redflag.project.common.ApiConstants;
+import com.redflag.project.common.constants.ApiConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 
 @RestController
@@ -17,10 +19,14 @@ public class UserController {
         this.userService = userService;
     }
 
+    //TODO incomplete, needs to actually validate something, and be encrypted.
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public String find() {
-        return  "This is the user -- temp";
+    public boolean validateUserLogin(UUID id, String password /* Temp, replaced with encrpyption */) {
+        return this.userService.validateUser(id, password);
     }
 
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public User createUser(@RequestBody UserRequest userRequest) { return this.userService.createUser(userRequest);}
 }

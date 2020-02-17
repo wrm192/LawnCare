@@ -9,5 +9,4 @@ import java.util.UUID;
 
 @Repository
 public interface UserRepository extends BaseEntityRepository<User> {
-    User findById();
 }

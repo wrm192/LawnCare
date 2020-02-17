@@ -1,4 +1,4 @@
-package com.redflag.project.common;
+package com.redflag.project.common.constants;
 
 public class ApiConstants {
 
