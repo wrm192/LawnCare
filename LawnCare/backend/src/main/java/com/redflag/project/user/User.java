@@ -17,7 +17,6 @@ public class User extends BaseEntity {
     @Column(nullable = false)
     private String lastName;
 
-
     @Column(nullable = false)
     private String email;
 
@@ -66,7 +65,6 @@ public class User extends BaseEntity {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-
 
     @Override
     public String toString() {

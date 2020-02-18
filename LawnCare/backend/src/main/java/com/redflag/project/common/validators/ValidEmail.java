@@ -1,5 +1,7 @@
 package com.redflag.project.common.validators;
 
+import com.redflag.project.common.constants.ErrorMessages;
+
 import javax.validation.Constraint;
 import javax.validation.Payload;
 import java.lang.annotation.*;
@@ -11,7 +13,7 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ValidEmail {
 
-    String Message() default "Invalid Email";
+    String message() default ErrorMessages.INVALID_EMAIL;
     Class<?> [] groups() default {};
     Class <? extends Payload> [] payload() default {};
 

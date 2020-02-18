@@ -1,7 +1,10 @@
 package com.redflag.project.common;
 
-import javax.persistence.*;
-import java.util.UUID;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
 public class BaseEntity {
@@ -9,13 +12,13 @@ public class BaseEntity {
     @Id
     @GeneratedValue()
     @Column(nullable = false)
-    private UUID id;
+    private Long id;
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

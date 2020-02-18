@@ -7,8 +7,8 @@ import javax.validation.constraints.NotEmpty;
 
 public class UserRequest {
 
-    @ValidEmail
     @NotNull
+    @ValidEmail // not working, needs  more testing
     @NotEmpty
     private String email;
 
