@@ -13,6 +13,7 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
+    // TODO, actually validate using hashed password I think, need to research best approach
     public boolean validateUser(Long id, String password) {
         Optional<User> optUser = userRepository.findById(id);
         return false;
