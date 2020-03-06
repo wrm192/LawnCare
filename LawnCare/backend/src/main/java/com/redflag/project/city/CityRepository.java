@@ -1,4 +1,4 @@
-package com.redflag.project.common.city;
+package com.redflag.project.city;
 
 import com.redflag.project.common.BaseEntityRepository;
 import org.springframework.stereotype.Repository;

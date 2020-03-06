@@ -1,10 +1,13 @@
 package com.redflag.project.user;
 
 
+import com.redflag.project.city.City;
 import com.redflag.project.common.BaseEntity;
+import com.redflag.project.membership.Membership;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 //TODO City Entity, Province Entity, Country Entity, Type of customer
 
@@ -25,6 +28,12 @@ public class User extends BaseEntity {
 
     @Column(nullable = false)
     private String phoneNumber;
+
+    @ManyToOne
+    private City city;
+
+    @ManyToOne
+    private Membership membership;
 
     public String getFirstName() {
         return firstName;
@@ -66,6 +75,22 @@ public class User extends BaseEntity {
         this.phoneNumber = phoneNumber;
     }
 
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
+
+    public Membership getMembership() {
+        return membership;
+    }
+
+    public void setMembership(Membership membership) {
+        this.membership = membership;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -73,8 +98,9 @@ public class User extends BaseEntity {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", address='" + address + '\'' +
-                ", phone='" + phoneNumber + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", city=" + city +
+                ", membership=" + membership +
                 '}';
     }
-
 }

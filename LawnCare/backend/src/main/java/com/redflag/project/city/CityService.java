@@ -1,4 +1,4 @@
-package com.redflag.project.common.city;
+package com.redflag.project.city;
 
 import org.springframework.stereotype.Service;
 
