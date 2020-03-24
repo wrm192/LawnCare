@@ -25,13 +25,6 @@
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_dialog_email" />
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="326dp"
-        android:layout_height="183dp"
-        android:gravity="center"
-        android:text="test" />
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
