@@ -10,7 +10,6 @@ import com.android.volley.toolbox.HttpHeaderParser;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.redflag.lawncare.BuildConfig;
-import com.redflag.lawncare.common.ApiConstants;
 
 import org.json.JSONObject;
 

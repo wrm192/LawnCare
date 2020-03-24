@@ -1,4 +1,4 @@
-package com.redflag.lawncare.common;
+package com.redflag.lawncare.common.api;
 
 public class ApiConstants {
     public static final String API_BASE = "https://ezmow-ca.myshopify.com/admin/api/";

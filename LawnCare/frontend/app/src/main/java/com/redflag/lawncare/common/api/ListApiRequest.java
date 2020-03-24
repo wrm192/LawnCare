@@ -12,7 +12,6 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.google.gson.JsonSyntaxException;
 import com.redflag.lawncare.BuildConfig;
-import com.redflag.lawncare.common.ApiConstants;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
