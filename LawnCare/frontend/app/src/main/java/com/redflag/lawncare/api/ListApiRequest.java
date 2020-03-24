@@ -73,7 +73,7 @@ public class ListApiRequest<T> extends Request {
     public Map<String, String> getAuthHeaders () {
         Map<String, String> headers = new HashMap<>();
         headers.put("Accept", "application/json");
-        headers.put("client_id", BuildConfig.API_KEY  );
+        headers.put("client_id", BuildConfig.API_KEY);
         headers.put("client_secret", BuildConfig.API_SSL );
         headers.put("X-Shopify-Access-Token", BuildConfig.API_TOKEN );
         return headers;

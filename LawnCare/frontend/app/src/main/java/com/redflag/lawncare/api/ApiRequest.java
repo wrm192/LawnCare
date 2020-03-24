@@ -45,12 +45,7 @@ public class ApiRequest<T> extends Request<T> {
     }
 
     public Map<String, String> getAuthHeaders () {
-        Map<String, String> headers = new HashMap<>();
-        headers.put("Accept", "application/json");
-        headers.put("client_id", "cdbefccab875a81af90a633589bc776e" );
-        headers.put("client_secret", "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" );
-        headers.put("X-Shopify-Access-Token", "b9cfc6fa6e63b0372898af0510628134");
-        return headers;
+       return headers;
     }
 
     @Override
