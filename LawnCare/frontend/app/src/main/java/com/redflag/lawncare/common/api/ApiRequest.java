@@ -1,4 +1,4 @@
-package com.redflag.lawncare.api;
+package com.redflag.lawncare.common.api;
 
 
 import com.android.volley.AuthFailureError;
@@ -9,6 +9,7 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
+import com.redflag.lawncare.BuildConfig;
 import com.redflag.lawncare.common.ApiConstants;
 
 import org.json.JSONObject;
@@ -45,7 +46,12 @@ public class ApiRequest<T> extends Request<T> {
     }
 
     public Map<String, String> getAuthHeaders () {
-       return headers;
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Accept", "application/json");
+        headers.put("client_id", BuildConfig.API_KEY);
+        headers.put("client_secret", BuildConfig.API_SSL );
+        headers.put("X-Shopify-Access-Token", BuildConfig.API_TOKEN );
+        return headers;
     }
 
     @Override

@@ -1,15 +1,14 @@
-package com.redflag.lawncare.api;
+package com.redflag.lawncare.common.api;
 
 import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.google.gson.Gson;
-import com.redflag.lawncare.common.models.Product;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 /**
  * Class maps to list
@@ -41,6 +40,19 @@ public class ApiMapperService<T> {
     }
 
 
+    private Response.ErrorListener createMyReqErrorListener() {
+        return new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                System.out.println(error.getMessage());
+            }
+        };
+    }
+
+
+    /**
+     * For testing
+     */
     private void printResponse(List<T> list) {
         for (T t : list)
             System.out.println(t);

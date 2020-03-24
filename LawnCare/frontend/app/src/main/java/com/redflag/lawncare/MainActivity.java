@@ -9,11 +9,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.redflag.lawncare.api.ApiMapperService;
-import com.redflag.lawncare.api.ApiRequest;
-import com.redflag.lawncare.api.ListApiRequest;
+import com.redflag.lawncare.common.api.ApiMapperService;
+import com.redflag.lawncare.common.api.ListApiRequest;
 import com.redflag.lawncare.common.models.Product;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,8 +23,6 @@ import android.widget.TextView;
 
 import org.json.JSONArray;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -80,63 +75,9 @@ public class MainActivity extends AppCompatActivity {
         };
     }
 
-    private Response.ErrorListener createMyReqErrorListener() {
-        return new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                System.out.println(error.getMessage());
-                textView1.setText("in error");
-            }
-        };
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
-
-//        Thread thread = new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                HttpsURLConnection urlConnection = null;
-//                try {
-//                    URL url = new URL(ApiConstants.FULL_BASE + "products.json");
-//
-//                    textView1.setText("request was sent");
-//
-//                    urlConnection = (HttpsURLConnection) url.openConnection();
-//                    textView1.setText("url was opened");
-//                    InputStream err = new BufferedInputStream(urlConnection.getErrorStream());
-//                    InputStream in = null;
-//                    if(err == null){
-//
-//                        in = new BufferedInputStream(urlConnection.getInputStream());
-//                        textView1.setText("in is got");
-//                        readStream(in);
-//                        textView1.setText("in is done");
-//                    }
-//                    System.out.println("error isn't null");
-//                    readStream(err);
-//                }
-//                catch (Exception e) {
-//                    System.out.println(e);
-//                    System.out.println(e.getStackTrace());
-//                    System.out.println("in the url creation");
-//                }
-//                finally { if(urlConnection != null) urlConnection.disconnect();}
-//            }
-//        });
-//        thread.start();
-
-        RequestQueue rq = Volley.newRequestQueue(this);
-        System.out.println("~~~~~~hi in options selected");
-        rq.start();
-
-
-        ListApiRequest req = new ListApiRequest(Request.Method.GET, "products",Product.class, this.listListener(), createMyReqErrorListener() );
-
-       /*ApiRequest<Product> req = new ApiRequest<>(Request.Method.GET, "products/4640312590475", Product.class, null,
-                createMyReqSuccessListener(), createMyReqErrorListener());*/
-        rq.add(req);
 
         int id = item.getItemId();
 
