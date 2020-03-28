@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="submit">Soumettre</string>
     <string name="app_name">LawnCare</string>
     <string name="action_book">FR_Book</string>
     <string name="action_settings">FR_Settings</string>
@@ -10,4 +11,15 @@
     <string name="action_name">FR_Name</string>
     <string name="action_phone">FR_Phone</string>
     <string name="image_desc">FR_Ezmow LOGO</string>
+    <string name="contact_inquiry_hint">FR_AskUsAnything</string>
+    <string name="contact_inquiry_label">FR_Inquiry</string>
+    <string name="contact_email_hint">john123@example.com</string>
+    <string name="contact_email_label">Courriel</string>
+    <string name="contact_phoneNumber_hint">123-456-7890</string>
+    <string name="contact_phoneNumber_label">Telephone</string>
+    <string name="contact_name_hint">Nom</string>
+    <string name="contact_name_label">Nom</string>
+    <string name="contact_title">FR_Contact Us!</string>
+
+
 </resources>
