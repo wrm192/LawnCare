@@ -22,12 +22,11 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.content.Intent;
 
 import org.json.JSONArray;
-import com.redflag.lawncare.faq.Faq;
+import com.redflag.lawncare.faq.FaqActivity;
 import java.util.List;
 
 
@@ -50,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         faq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, Faq.class));
+                startActivity(new Intent(MainActivity.this, FaqActivity.class));
             }
         });
 
