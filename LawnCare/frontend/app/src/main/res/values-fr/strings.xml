@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LawnCare</string>
+    <string name="action_book">FR_Book</string>
+    <string name="action_settings">FR_Settings</string>
+    <string name="tab_FAQ">FAQ</string>
+    <string name="tab_book">FR_BOOK NOW</string>
+    <string name="tab_contact">FR_Contant</string>
+    <string name="action_address">FR_Address</string>
+    <string name="action_name">FR_Name</string>
+    <string name="action_phone">FR_Phone</string>
+    <string name="image_desc">FR_Ezmow LOGO</string>
+</resources>

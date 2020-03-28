@@ -4,4 +4,9 @@
     <string name="tab_contact">Contact</string>
     <string name="tab_FAQ">FAQ</string>
     <string name="tab_book">Book Now</string>
+    <string name="action_book">Book</string>
+    <string name="image_desc">Ezmow Logo</string>
+    <string name="action_address">Address</string>
+    <string name="action_name">Name</string>
+    <string name="action_phone">Phone Number</string>
 </resources>
