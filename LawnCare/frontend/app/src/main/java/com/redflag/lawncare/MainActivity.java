@@ -3,12 +3,15 @@ package com.redflag.lawncare;
 import android.os.Bundle;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 
 public class MainActivity extends AppCompatActivity {
 =======
+=======
+>>>>>>> efac4c7e911bf09d17ac0fa90ac7942a415c511e
 import com.android.volley.Response;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -33,7 +36,10 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     TextView textView1;
     private Button faq;
+<<<<<<< HEAD
 >>>>>>> FAQ 1.1
+=======
+>>>>>>> efac4c7e911bf09d17ac0fa90ac7942a415c511e
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +49,15 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 <<<<<<< HEAD
 =======
+
+        faq = (Button)findViewById(R.id.faqbutton);
+
+        faq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, FaqActivity.class));
+            }
+        });
 
         faq = (Button)findViewById(R.id.faqbutton);
 
