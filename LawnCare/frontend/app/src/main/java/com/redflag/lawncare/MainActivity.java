@@ -2,15 +2,10 @@ package com.redflag.lawncare;
 
 import android.os.Bundle;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.Volley;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.redflag.lawncare.common.api.ApiMapperService;
-import com.redflag.lawncare.common.api.ListApiRequest;
 import com.redflag.lawncare.common.models.Product;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,14 +15,18 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.content.Intent;
 
 import org.json.JSONArray;
-
+import com.redflag.lawncare.faq.Faq;
 import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
     TextView textView1;
+    private Button faq;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +34,15 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
 
         setSupportActionBar(toolbar);
+
+        faq = (Button)findViewById(R.id.faqbutton);
+
+        faq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, Faq.class));
+            }
+        });
 
        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -45,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
