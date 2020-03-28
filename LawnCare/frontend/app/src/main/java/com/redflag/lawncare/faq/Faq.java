@@ -19,7 +19,7 @@ public class Faq extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.faq);
+        setContentView(R.layout.activity_faq);
 
         ListView faqView =(ListView) findViewById(R.id.listview);
 
@@ -30,7 +30,7 @@ public class Faq extends AppCompatActivity
 
         List<HashMap<String, String>> listItems = new ArrayList<>();
 
-        SimpleAdapter adapter = new SimpleAdapter(this, listItems, R.layout.faq,
+        SimpleAdapter adapter = new SimpleAdapter(this, listItems, R.layout.activity_faq,
                 new String[]{"First Line", "Second Line"},
                 new int[]{R.id.text1, R.id.text2});
 
