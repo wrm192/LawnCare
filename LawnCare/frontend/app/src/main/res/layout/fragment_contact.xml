@@ -44,7 +44,9 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="5dp"
                 android:ems="10"
-                android:hint="@string/contact_name_hint" />
+                android:hint="@string/contact_name_hint"
+                android:inputType="text"/>
+
 
 
             <TextView
@@ -114,7 +116,7 @@
 
         </LinearLayout>
 
-
+gi
     </ScrollView>
 
 
