@@ -10,7 +10,13 @@ import com.google.android.material.tabs.TabLayout;
 import com.redflag.lawncare.common.TabsApadater;
 
 
+
 public class MainActivity extends AppCompatActivity {
+
+    /*public MainActivity(FragmentManager fm) {
+        super(fm);
+    }*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
