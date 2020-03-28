@@ -1,4 +1,4 @@
 package com.redflag.lawncare.register;
 
-public class temp {
+public class User {
 }
