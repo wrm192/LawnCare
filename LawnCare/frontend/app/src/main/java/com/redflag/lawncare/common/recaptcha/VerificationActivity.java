@@ -1,85 +1,38 @@
 package com.redflag.lawncare.common.recaptcha;
 
-/*
-public class VerificationActivity extends MainActivity {
 
-    private CheckBox checkBox;
-    private TextView testView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
-    @Override
-    protected void onCreate (Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+import com.google.android.gms.safetynet.SafetyNet;
+import com.google.android.gms.safetynet.SafetyNetApi;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.redflag.lawncare.MainActivity;
 
+public class VerificationActivity {
 
+    private OnSuccessListener<SafetyNetApi.RecaptchaTokenResponse> listener;
+    private OnFailureListener failureListener;
+    private AppCompatActivity component;
+
+    public VerificationActivity(OnSuccessListener<SafetyNetApi.RecaptchaTokenResponse> listener, OnFailureListener failureListener, AppCompatActivity component){
+        this.failureListener = failureListener;
+        this.listener = listener;
+        this.component = component;
+        this.checkCaptchaBox();
     }
 
-
-    private void CheckCaptchaBox(boolean isChecked) {
-        if (isChecked) {
-            SafetyNet.getClient(this).verifyWithRecaptcha("6Lf5nOQUAAAAAIiUBfbb_2Tb5_fm7905Bts5zIYn")
-                    .addOnSuccessListener(this, new OnSuccessListener<SafetyNetApi.RecaptchaTokenResponse>() {
-                        @Override
-                        public void onSuccess(SafetyNetApi.RecaptchaTokenResponse response) {
-                            // Indicates communication with reCAPTCHA service was
-                            // successful.
-                            String userResponseToken = response.getTokenResult();
-                            if (!userResponseToken.isEmpty()) {
-                                // Validate the user response token using the
-                                // reCAPTCHA siteverify API.
-                                handleSiteVerify(response.getTokenResult());
-                            }
-                        }
-                    })
-                    .addOnFailureListener(this, new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            if (e instanceof ApiException) {
-                                // An error occurred when communicating with the
-                                // reCAPTCHA service. Refer to the status code to
-                                // handle the error appropriately.
-                                ApiException apiException = (ApiException) e;
-                                int statusCode = apiException.getStatusCode();
-                                Log.d(TAG, "Error: " + CommonStatusCodes
-                                        .getStatusCodeString(statusCode));
-                            } else {
-                                // A different, unknown type of error occurred.
-                                Log.d(TAG, "Error: " + e.getMessage());
-                            }
-                        }
-                    });
-        }
+    public VerificationActivity(OnSuccessListener<SafetyNetApi.RecaptchaTokenResponse> listener, OnFailureListener failureListener, Fragment fragment){
+        this(listener, failureListener, (MainActivity)fragment.getActivity());
     }
 
-    //Server side code for captcha
-    private void handleSiteVerify(String tokenResult) {
+    private void checkCaptchaBox() {
 
-        textView1.setText(tokenResult);
-
-
-    }
-
-    private class MyNetworkCode extends AsyncTask<String,Void,Void> {
-
-        ProgressDialog progressDialog;
-        BufferedReader bufferedReader;
-        BufferedWriter bufferedWriter;
-        InputStream inputStream;
-        OutputStream outputStream;
-        InputStreamReader inputStreamReader;
-        OutputStreamWriter outputStreamWriter;
-
-        HttpsURLConnection httpsURLConnection;
-        URL url;
-
-        @Override
-        protected Void doInBackground(String... strings) {
-            return null;
-        }
+        SafetyNet.getClient(component).verifyWithRecaptcha("6Lf5nOQUAAAAAIiUBfbb_2Tb5_fm7905Bts5zIYn")
+                .addOnSuccessListener(component, this.listener)
+                .addOnFailureListener(component, this.failureListener);
 
     }
-
-
 
 }
-*/
