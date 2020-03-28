@@ -71,4 +71,29 @@ public class ListApiRequest extends Request {
 
     }
 
+    /*
+        private Response.Listener<Product> createMyReqSuccessListener() {
+
+        return new Response.Listener<Product>() {
+            @Override
+            public void onResponse(Product response) {
+                System.out.println("this response is");
+                textView1.setText("the response is " + response);
+            }
+        };
+    }
+
+     */
+
+    /*
+    private Response.Listener<JSONArray> listListener () {
+        return new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray array) {
+                List<Product> prod =  new ApiMapperService<>(Product.class).convertJSONArrayToList(array);
+                textView1.setText( "Size is: " + prod.size());
+            }
+        };
+    }
+     */
 }
