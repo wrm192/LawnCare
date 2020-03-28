@@ -28,12 +28,5 @@
         app:layout_anchorGravity="center"
         app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-    <Button
-        android:id="@+id/faqbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|top"
-        android:background="?attr/colorPrimaryDark"
-        android:text="FAQ" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

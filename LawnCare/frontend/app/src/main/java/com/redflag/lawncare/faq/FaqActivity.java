@@ -21,7 +21,7 @@ public class FaqActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_faq);
 
-        ListView faqView =(ListView) findViewById(R.id.listview);
+        ListView faqView = (ListView) findViewById(R.id.listview);
 
         HashMap<String,String> faqList = new HashMap<>();
 

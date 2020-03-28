@@ -43,14 +43,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        faq = (Button) findViewById(R.id.faqbutton);
-
-        faq.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, FaqActivity.class));
-            }
-        });
-
     }
 }
