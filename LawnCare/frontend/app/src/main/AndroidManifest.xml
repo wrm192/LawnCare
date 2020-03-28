@@ -21,6 +21,9 @@
             </intent-filter>
 
         </activity>
+        <activity android:name=".Contact.ContactActivity"
+            android:label="Contact Us"/>
+
     </application>
     <uses-permission android:name="android.permission.INTERNET">
     </uses-permission>
