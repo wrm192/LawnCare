@@ -13,7 +13,7 @@ import java.util.Map;
 
 
 
-public class Faq extends AppCompatActivity
+public class FaqActivity extends AppCompatActivity
 
 {
     @Override
