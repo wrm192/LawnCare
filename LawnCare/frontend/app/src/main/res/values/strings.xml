@@ -19,6 +19,7 @@
     <string name="contact_name_hint">Name</string>
     <string name="contact_name_label">Name</string>
     <string name="contact_title">Contact Us!</string>
-
-
+    <string name="recaptcha_site_key">6Lf5nOQUAAAAAIiUBfbb_2Tb5_fm7905Bts5zIYn</string>
+    <string name="check_box">CheckBox</string>
+    <string name="captcha">Captcha</string>
 </resources>
