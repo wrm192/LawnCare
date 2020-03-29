@@ -3,7 +3,6 @@ package com.redflag.lawncare;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
@@ -15,11 +14,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+        // Splash Screen
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        //create tabs and make them swipeable
+        setTabsAndViewPager();
 
+        setSupportActionBar(findViewById(R.id.toolbar));
+    }
 
+    void setTabsAndViewPager() {
         TabLayout tabLayout = findViewById(R.id.bottomTab);
         tabLayout.addTab(tabLayout.newTab().setText("Contact"));
         tabLayout.addTab(tabLayout.newTab().setText("Book"));
@@ -43,9 +48,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTabReselected(TabLayout.Tab tab) { }
         });
-
-        setSupportActionBar(toolbar);
-
     }
 
 }
