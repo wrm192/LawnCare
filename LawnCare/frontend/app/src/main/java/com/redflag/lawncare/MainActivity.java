@@ -11,11 +11,14 @@ import com.redflag.lawncare.common.TabsApadater;
 
 
 public class MainActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
+
 
         TabLayout tabLayout = findViewById(R.id.bottomTab);
         tabLayout.addTab(tabLayout.newTab().setText("Contact"));
@@ -42,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         setSupportActionBar(toolbar);
+
     }
 
 }
