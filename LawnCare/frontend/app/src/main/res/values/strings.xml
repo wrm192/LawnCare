@@ -11,7 +11,7 @@
     <string name="action_address">Address</string>
     <string name="action_name">Name</string>
     <string name="action_phone">Phone Number</string>
-
+    <string name="book_now_title">Book Now</string>
     <string name="contact_inquiry_hint">Ask Us Anything</string>
     <string name="contact_inquiry_label">Inquiry</string>
     <string name="contact_email_hint">john123@example.com</string>
