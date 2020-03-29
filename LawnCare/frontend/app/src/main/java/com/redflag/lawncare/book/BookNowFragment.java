@@ -15,6 +15,7 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.safetynet.SafetyNetApi;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.textfield.TextInputLayout;
 import com.redflag.lawncare.R;
 import com.redflag.lawncare.common.recaptcha.VerificationActivity;
 
@@ -35,9 +36,17 @@ public class BookNowFragment extends Fragment {
             public void onClick(View v) {
                 System.out.println("button pressed");
 
-                EditText address = view.findViewById(R.id.address);
-                EditText phoneNumber = view.findViewById(R.id.phoneNum);
-                EditText name = view.findViewById(R.id.name);
+                TextInputLayout addressTIL = view.findViewById(R.id.address);
+                TextInputLayout phoneNumberTIL = view.findViewById(R.id.phoneNum);
+                TextInputLayout nameTIL = view.findViewById(R.id.name);
+
+
+                EditText address = addressTIL.getEditText();
+                EditText name = nameTIL.getEditText();
+                EditText phoneNumber = phoneNumberTIL.getEditText();
+
+
+
 
                 if(address == null || phoneNumber == null || name == null ||
                         "".equals(address.getText().toString())  ||  "".equals(name.getText().toString()) || "".equals(phoneNumber.getText().toString())) {
@@ -73,6 +82,7 @@ public class BookNowFragment extends Fragment {
                         }
                     }, BookNowFragment.this );
                 }
+
 
 
 
