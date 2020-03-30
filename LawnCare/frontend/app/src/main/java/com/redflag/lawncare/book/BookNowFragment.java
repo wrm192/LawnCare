@@ -34,19 +34,13 @@ public class BookNowFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("button pressed");
-
                 TextInputLayout addressTIL = view.findViewById(R.id.address);
                 TextInputLayout phoneNumberTIL = view.findViewById(R.id.phoneNum);
                 TextInputLayout nameTIL = view.findViewById(R.id.name);
 
-
                 EditText address = addressTIL.getEditText();
                 EditText name = nameTIL.getEditText();
                 EditText phoneNumber = phoneNumberTIL.getEditText();
-
-
-
 
                 if(address == null || phoneNumber == null || name == null ||
                         "".equals(address.getText().toString())  ||  "".equals(name.getText().toString()) || "".equals(phoneNumber.getText().toString())) {
@@ -54,7 +48,7 @@ public class BookNowFragment extends Fragment {
                     //TODO error, not sure how to do this properly.
                 }else {
                     System.out.println(address.getText().toString() + phoneNumber.getText().toString() + name.getText().toString());
-                    VerificationActivity va = new VerificationActivity(new OnSuccessListener<SafetyNetApi.RecaptchaTokenResponse>() {
+                    new VerificationActivity(new OnSuccessListener<SafetyNetApi.RecaptchaTokenResponse>() {
                         @Override
                         public void onSuccess(SafetyNetApi.RecaptchaTokenResponse response) {
                             // Indicates communication with reCAPTCHA service was
