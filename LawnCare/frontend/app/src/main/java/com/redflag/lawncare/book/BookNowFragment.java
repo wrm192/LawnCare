@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
 import com.redflag.lawncare.R;
+import com.redflag.lawncare.common.email.EmailService;
 import com.redflag.lawncare.common.recaptcha.VerificationActivity;
 
 public class BookNowFragment extends Fragment {
@@ -54,7 +55,7 @@ public class BookNowFragment extends Fragment {
                             // Indicates communication with reCAPTCHA service was
                             // successful.
                             String userResponseToken = response.getTokenResult();
-                            System.out.println("in suc");
+                            new EmailService("Consultation - " + name, name + " is looking for a consultation \ndetails:\nPhone number: " + phoneNumber + "\nAddress: " + address);
                             if (!userResponseToken.isEmpty()) {
                                 // Validate the user response token using the
                                 // reCAPTCHA siteverify API.
