@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
+import com.redflag.lawncare.Contact.ContactFragment;
 import com.redflag.lawncare.book.BookNowFragment;
-import com.redflag.lawncare.contact.ContactFragment;
+import com.redflag.lawncare.Contact.ContactFragment;
+import com.redflag.lawncare.faq.faqFragment;
 
 public class TabsApadater extends FragmentStatePagerAdapter {
 
@@ -34,7 +36,7 @@ public class TabsApadater extends FragmentStatePagerAdapter {
                 return new BookNowFragment();
             case 2:
                 // FAQ
-                return new BookNowFragment();
+                return new faqFragment();
             default:
                 return null;
         }
