@@ -21,5 +21,6 @@
     <string name="contact_name_hint">Name</string>
     <string name="contact_name_label">Name</string>
     <string name="contact_title">Contact Us!</string>
+    <string name="settings_set_locale">Language:</string>
   
 </resources>
