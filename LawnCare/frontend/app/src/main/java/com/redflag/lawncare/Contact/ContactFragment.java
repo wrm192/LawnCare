@@ -1,4 +1,4 @@
-package com.redflag.lawncare.contact;
+package com.redflag.lawncare.Contact;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,14 +11,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.textfield.TextInputLayout;
 import com.redflag.lawncare.R;
 
 public class ContactFragment extends Fragment {
-    private String name;
-    private String phoneNumb;
-    private String email;
-    private String inquiry;
-    private Button submit;
 
     @Nullable
     @Override
@@ -27,19 +23,20 @@ public class ContactFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_contact, container, false);
 
 
-        EditText fNameInput = rootView.findViewById(R.id.fNameInput);
-        EditText phoneNumbInput = rootView.findViewById(R.id.phoneNumberInput);
-        EditText emailInput = rootView.findViewById(R.id.emailInput);
+        TextInputLayout fNameInput = rootView.findViewById(R.id.name);
+        TextInputLayout phoneNumbInput = rootView.findViewById(R.id.phoneNum);
+        TextInputLayout emailInput = rootView.findViewById(R.id.email);
 
         EditText inquiryInput = rootView.findViewById(R.id.inquiryInput);
-        submit = rootView.findViewById(R.id.submitBtn);
+
+        Button submit = rootView.findViewById(R.id.submitBtn);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                name = fNameInput.getText().toString();
-                phoneNumb = phoneNumbInput.getText().toString();
-                email = emailInput.getText().toString();
-                inquiry = inquiryInput.getText().toString();
+                EditText name = fNameInput.getEditText();
+                EditText phoneNumb = phoneNumbInput.getEditText();
+                EditText email = emailInput.getEditText();
+                String inquiry = inquiryInput.getText().toString();
 
             }
         });
