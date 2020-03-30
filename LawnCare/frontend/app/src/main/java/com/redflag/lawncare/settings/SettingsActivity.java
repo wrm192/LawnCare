@@ -42,13 +42,16 @@ public class SettingsActivity extends AppCompatActivity{
                     Configuration conig = getBaseContext().getResources().getConfiguration();
                     conig.setLocale(french);
                     getBaseContext().getResources().updateConfiguration(conig, getBaseContext().getResources().getDisplayMetrics());
+                    finish();
                     startActivity(new Intent(SettingsActivity.this, MainActivity.class));
                 } else if(val.equals("English"))  {
                     Locale.setDefault(english);
                     Configuration conig = getBaseContext().getResources().getConfiguration();
                     conig.setLocale(english);
                     getBaseContext().getResources().updateConfiguration(conig, getBaseContext().getResources().getDisplayMetrics());
+                    finish();
                     startActivity(new Intent(SettingsActivity.this, MainActivity.class));
+
                 }
             }
 
