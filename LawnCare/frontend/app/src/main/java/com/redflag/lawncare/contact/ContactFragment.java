@@ -30,7 +30,7 @@ public class ContactFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_contact, container, false);
 
 
-        TextInputLayout NameInput = rootView.findViewById(R.id.name);
+        TextInputLayout nameInput = rootView.findViewById(R.id.name);
         TextInputLayout phoneNumbInput = rootView.findViewById(R.id.phoneNum);
         TextInputLayout emailInput = rootView.findViewById(R.id.email);
 
@@ -40,7 +40,7 @@ public class ContactFragment extends Fragment {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText name = NameInput.getEditText();
+                EditText name = nameInput.getEditText();
                 EditText phoneNumb = phoneNumbInput.getEditText();
                 EditText email = emailInput.getEditText();
                 String inquiry = inquiryInput.getText().toString();
