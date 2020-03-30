@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
-import com.redflag.lawncare.common.TabsApadater;
+import com.redflag.lawncare.common.TabsAdapter;
 import com.redflag.lawncare.settings.SettingsActivity;
 
 
@@ -42,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
 
         TabLayout.Tab tab = tabLayout.getTabAt(1);
         tab.select();
-        TabsApadater tabsApadater = new TabsApadater(getSupportFragmentManager(), tabLayout.getTabCount());
+        TabsAdapter tabsAdapter = new TabsAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         final ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
-        viewPager.setAdapter(tabsApadater);
+        viewPager.setAdapter(tabsAdapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         viewPager.setCurrentItem(1);
 

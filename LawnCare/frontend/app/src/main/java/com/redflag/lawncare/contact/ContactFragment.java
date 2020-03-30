@@ -1,4 +1,4 @@
-package com.redflag.lawncare.Contact;
+package com.redflag.lawncare.contact;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

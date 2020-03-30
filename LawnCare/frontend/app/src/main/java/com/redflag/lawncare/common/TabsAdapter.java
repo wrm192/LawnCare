@@ -4,16 +4,17 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
-import com.redflag.lawncare.faq.FaqFragment;
+
 import com.redflag.lawncare.contact.ContactFragment;
 import com.redflag.lawncare.book.BookNowFragment;
+import com.redflag.lawncare.faq.FaqFragment;
 
 
-public class TabsApadater extends FragmentStatePagerAdapter {
+public class TabsAdapter extends FragmentStatePagerAdapter {
 
     private int tabs;
 
-    public TabsApadater(@NonNull FragmentManager fm, int tabs) {
+    public TabsAdapter(@NonNull FragmentManager fm, int tabs) {
         super(fm);
         this.tabs = tabs;
     }
