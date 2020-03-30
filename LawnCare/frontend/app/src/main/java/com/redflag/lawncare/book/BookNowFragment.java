@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
 import com.redflag.lawncare.R;
+import com.redflag.lawncare.common.email.EmailService;
 import com.redflag.lawncare.common.recaptcha.VerificationActivity;
 
 public class BookNowFragment extends Fragment {
@@ -34,33 +35,35 @@ public class BookNowFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("button pressed");
-
                 TextInputLayout addressTIL = view.findViewById(R.id.address);
                 TextInputLayout phoneNumberTIL = view.findViewById(R.id.phoneNum);
                 TextInputLayout nameTIL = view.findViewById(R.id.name);
-
 
                 EditText address = addressTIL.getEditText();
                 EditText name = nameTIL.getEditText();
                 EditText phoneNumber = phoneNumberTIL.getEditText();
 
+                boolean error;
+                error = checkForError(address, false);
+                error = checkForError(name, error);
+                error = checkForError(phoneNumber, error);
+                error = validatePhoneNumber(phoneNumber, error);
 
+                if(!error){
 
-
-                if(address == null || phoneNumber == null || name == null ||
-                        "".equals(address.getText().toString())  ||  "".equals(name.getText().toString()) || "".equals(phoneNumber.getText().toString())) {
-                    System.out.println("in error");
-                    //TODO error, not sure how to do this properly.
-                }else {
-                    System.out.println(address.getText().toString() + phoneNumber.getText().toString() + name.getText().toString());
-                    VerificationActivity va = new VerificationActivity(new OnSuccessListener<SafetyNetApi.RecaptchaTokenResponse>() {
+                    clearError(address);
+                    clearError(name);
+                    clearError(phoneNumber);
+                    new VerificationActivity(new OnSuccessListener<SafetyNetApi.RecaptchaTokenResponse>() {
                         @Override
                         public void onSuccess(SafetyNetApi.RecaptchaTokenResponse response) {
                             // Indicates communication with reCAPTCHA service was
                             // successful.
                             String userResponseToken = response.getTokenResult();
-                            System.out.println("in suc");
+                            new EmailService("Consultation - " + name.getText().toString(), name.getText().toString() + " is looking for a consultation \ndetails:\nPhone number: " + phoneNumber.getText().toString() + "\nAddress: " + address.getText().toString());
+                            address.setText("");
+                            name.setText("");
+                            phoneNumber.setText("");
                             if (!userResponseToken.isEmpty()) {
                                 // Validate the user response token using the
                                 // reCAPTCHA siteverify API.
@@ -92,8 +95,25 @@ public class BookNowFragment extends Fragment {
         return view;
     }
 
+    private boolean checkForError(EditText text, boolean errorState) {
+        if("".equals(text.getText().toString())){
+            text.setError("Field Can't be empty");
+            return true;
+        }
+        return errorState;
+    }
 
+    private void clearError (EditText text) {
+        text.setError(null);
+    }
 
+    private boolean validatePhoneNumber(EditText phone, boolean errorState) {
+        if(!android.util.Patterns.PHONE.matcher(phone.getText().toString()).matches()){
+            phone.setError("Must be a valid phone number, ex: 1-123-123-1234");
+            return true;
+        }
+        return errorState;
+    }
 
 
 }

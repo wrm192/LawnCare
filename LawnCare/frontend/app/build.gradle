@@ -5,7 +5,7 @@ android {
     buildToolsVersion "29.0.3"
     defaultConfig {
         applicationId "com.redflag.lawncare"
-        minSdkVersion 15
+        minSdkVersion 17
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -39,4 +39,6 @@ dependencies {
     implementation group: 'com.google.code.gson', name: 'gson', version: '2.8.5'
     implementation 'com.android.volley:volley:1.1.1'
     implementation 'com.google.android.gms:play-services-safetynet:17.0.0'
+    implementation 'com.sun.mail:android-mail:1.5.5'
+    implementation 'com.sun.mail:android-activation:1.5.5'
 }
