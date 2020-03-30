@@ -59,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="20dp"
-                android:hint="@string/action_phone">
+                android:hint="@string/contact_email_label">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
