@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.redflag.lawncare.Contact.ContactFragment;
+import com.redflag.lawncare.contact.ContactFragment;
 import com.redflag.lawncare.book.BookNowFragment;
 
 public class TabsApadater extends FragmentStatePagerAdapter {
