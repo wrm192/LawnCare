@@ -43,12 +43,17 @@ public class BookNowFragment extends Fragment {
                 EditText name = nameTIL.getEditText();
                 EditText phoneNumber = phoneNumberTIL.getEditText();
 
-                if(address == null || phoneNumber == null || name == null ||
-                        "".equals(address.getText().toString())  ||  "".equals(name.getText().toString()) || "".equals(phoneNumber.getText().toString())) {
-                    System.out.println("in error");
-                    //TODO error, not sure how to do this properly.
-                }else {
-                    System.out.println(address.getText().toString() + phoneNumber.getText().toString() + name.getText().toString());
+                boolean error;
+                error = checkForError(address, false);
+                error = checkForError(name, error);
+                error = checkForError(phoneNumber, error);
+                error = validatePhoneNumber(phoneNumber, error);
+
+                if(!error){
+
+                    clearError(address);
+                    clearError(name);
+                    clearError(phoneNumber);
                     new VerificationActivity(new OnSuccessListener<SafetyNetApi.RecaptchaTokenResponse>() {
                         @Override
                         public void onSuccess(SafetyNetApi.RecaptchaTokenResponse response) {
@@ -87,8 +92,25 @@ public class BookNowFragment extends Fragment {
         return view;
     }
 
+    private boolean checkForError(EditText text, boolean errorState) {
+        if("".equals(text.getText().toString())){
+            text.setError("Field Can't be empty");
+            return true;
+        }
+        return errorState;
+    }
 
+    private void clearError (EditText text) {
+        text.setError(null);
+    }
 
+    private boolean validatePhoneNumber(EditText phone, boolean errorState) {
+        if(!android.util.Patterns.PHONE.matcher(phone.getText().toString()).matches()){
+            phone.setError("Must be a valid phone number, ex: 1-123-123-1234");
+            return true;
+        }
+        return errorState;
+    }
 
 
 }
