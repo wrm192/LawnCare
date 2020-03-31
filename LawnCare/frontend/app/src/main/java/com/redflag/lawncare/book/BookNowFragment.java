@@ -96,7 +96,7 @@ public class BookNowFragment extends Fragment {
 
     private boolean checkForError(EditText text, boolean errorState) {
         if("".equals(text.getText().toString())){
-            text.setError(getResources().getString(R.string.err_cant_be_empty));
+            text.setError(getString(R.string.err_cant_be_empty));
             return true;
         }
         return errorState;
@@ -108,7 +108,7 @@ public class BookNowFragment extends Fragment {
 
     private boolean validatePhoneNumber(EditText phone, boolean errorState) {
         if(!android.util.Patterns.PHONE.matcher(phone.getText().toString()).matches()){
-            phone.setError(getResources().getString(R.string.err_must_be_phone));
+            phone.setError(getString(R.string.err_must_be_phone));
             return true;
         }
         return errorState;
