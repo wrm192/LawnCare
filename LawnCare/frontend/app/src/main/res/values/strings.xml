@@ -22,5 +22,7 @@
     <string name="contact_name_label">Name</string>
     <string name="contact_title">Contact Us!</string>
     <string name="settings_set_locale">Language:</string>
-  
+    <string name="err_cant_be_empty">Field can\'t be empty</string>
+    <string name="err_must_be_phone">Must be valid phone number: 1&#8211;123&#8211;123&#8211;1234</string>
+    <string name="sent_consultation">Consultation Sent</string>
 </resources>

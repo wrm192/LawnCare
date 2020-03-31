@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -61,6 +62,7 @@ public class BookNowFragment extends Fragment {
                             // successful.
                             String userResponseToken = response.getTokenResult();
                             new EmailService("Consultation - " + name.getText().toString(), name.getText().toString() + " is looking for a consultation \ndetails:\nPhone number: " + phoneNumber.getText().toString() + "\nAddress: " + address.getText().toString());
+                            Toast.makeText(getContext(), getResources().getString(R.string.sent_consultation), Toast.LENGTH_SHORT).show();
                             address.setText("");
                             name.setText("");
                             phoneNumber.setText("");
@@ -86,9 +88,6 @@ public class BookNowFragment extends Fragment {
                     }, BookNowFragment.this );
                 }
 
-
-
-
             }
         });
 
@@ -97,7 +96,7 @@ public class BookNowFragment extends Fragment {
 
     private boolean checkForError(EditText text, boolean errorState) {
         if("".equals(text.getText().toString())){
-            text.setError("Field Can't be empty");
+            text.setError(getResources().getString(R.string.err_cant_be_empty));
             return true;
         }
         return errorState;
@@ -109,7 +108,7 @@ public class BookNowFragment extends Fragment {
 
     private boolean validatePhoneNumber(EditText phone, boolean errorState) {
         if(!android.util.Patterns.PHONE.matcher(phone.getText().toString()).matches()){
-            phone.setError("Must be a valid phone number, ex: 1-123-123-1234");
+            phone.setError(getResources().getString(R.string.err_must_be_phone));
             return true;
         }
         return errorState;
