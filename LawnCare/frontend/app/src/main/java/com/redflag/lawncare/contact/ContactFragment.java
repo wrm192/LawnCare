@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -57,7 +58,7 @@ public class ContactFragment extends Fragment {
 
 
                 if (errorInquiry) {
-                    inquiryInput.setError("Please enter an inquiry");
+                    inquiryInput.setError(getString(R.string.err_cant_be_empty));
                     error = true;
                 }
 
@@ -74,6 +75,12 @@ public class ContactFragment extends Fragment {
                             // successful.
                             String userResponseToken = response.getTokenResult();
                             new EmailService("Contact Us - " + name.getText().toString(), "Name: " + name.getText().toString() + "\nPhone: " + phoneNumb.getText().toString() + "\nEmail: " + email.getText().toString() + "\n\nInquiry:\n" + inquiry);
+                            Toast.makeText(getContext(), getResources().getString(R.string.sent_contact), Toast.LENGTH_SHORT).show();
+                            name.setText("");
+                            phoneNumb.setText("");
+                            email.setText("");
+                            inquiryInput.setText("");
+
                             if (!userResponseToken.isEmpty()) {
                                 // Validate the user response token using the
                                 // reCAPTCHA siteverify API.
@@ -115,7 +122,7 @@ public class ContactFragment extends Fragment {
 
     private boolean checkForError(EditText text, boolean errorState) {
         if("".equals(text.getText().toString())){
-            text.setError("Field Can't be empty");
+            text.setError(getString(R.string.err_cant_be_empty));
             return true;
         }
         return errorState;
@@ -126,7 +133,7 @@ public class ContactFragment extends Fragment {
 
     private boolean validatePhoneNumber(EditText phone, boolean errorState) {
         if(!android.util.Patterns.PHONE.matcher(phone.getText().toString()).matches()){
-            phone.setError("Must be a valid phone number, ex: 1-123-123-1234");
+            phone.setError(getString(R.string.err_must_be_phone));
             return true;
         }
         return errorState;
@@ -134,7 +141,7 @@ public class ContactFragment extends Fragment {
 
     private boolean validateEmail(EditText email, boolean errorState) {
         if(!Patterns.EMAIL_ADDRESS.matcher(email.getText().toString()).matches()){
-            email.setError("Must be a valid email address, ex: john123@email.com");
+            email.setError(getString(R.string.err_must_be_email));
             return true;
         }
         return errorState;

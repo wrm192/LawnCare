@@ -24,5 +24,8 @@
     <string name="settings_set_locale">FR_Language:</string>
     <string name="err_cant_be_empty">FR_Field can\'t be empty</string>
     <string name="err_must_be_phone">FR_Must be valid phone number: 1&#8211;123&#8211;)123&#8211;1234</string>
+    <string name="err_must_be_email">FR_Must be a valid email john123@email.com</string>
     <string name="sent_consultation">FR_Consultation Sent</string>
+    <string name="sent_contact">FR_Inquiry Sent</string>
+
 </resources>
