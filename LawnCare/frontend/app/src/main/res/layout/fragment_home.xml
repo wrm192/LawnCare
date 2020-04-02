@@ -25,72 +25,33 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
                 android:gravity="center"
-                android:text="@string/book_now_title" />
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/name"
+                android:text="@string/home_title" />
+            <TextView
+                android:id="@+id/text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:hint="@string/action_name">
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/home_text" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/phoneNum"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginHorizontal="20dp"
-                android:hint="@string/action_phone">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="phone" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/address"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginHorizontal="20dp"
-                android:hint="@string/action_address">
-
-                <com.google.android.material.textfield.TextInputEditText
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </com.google.android.material.textfield.TextInputLayout>
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="423dp"
+                android:layout_height="386dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="172dp"
+                android:contentDescription="@string/image_desc"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.994"
+                app:srcCompat="@drawable/ezmow" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/bookNowButton"
-                    android:layout_width="255dp"
-                    android:layout_height="255dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginHorizontal="20dp"
-                    android:layout_marginStart="72dp"
-                    android:layout_marginLeft="72dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="81dp"
-                    android:layout_marginRight="81dp"
-                    android:layout_marginBottom="30dp"
-                    android:background="@drawable/button_states"
-                    android:text="@string/action_book"
-                    android:textSize="15dp" />
-            </RelativeLayout>
+                android:layout_height="match_parent"/>
 
 
         </LinearLayout>
