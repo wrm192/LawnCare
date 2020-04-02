@@ -27,5 +27,10 @@
     <string name="err_must_be_email">FR_Must be a valid email john123@email.com</string>
     <string name="sent_consultation">FR_Consultation Sent</string>
     <string name="sent_contact">FR_Inquiry Sent</string>
+    <string name="home_title">FR_About Us</string>
+    <string name="home_text">FR_EZMow is an Uber like service designed to make lawn maintenance easy. Book a service with us and have a lawn mowing robot come to your door steps to take care of the rest! Use the contact us form for any inquiries.**Employee supervisor will be on site.**</string>
+
+
+
 
 </resources>
