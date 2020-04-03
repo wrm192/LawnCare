@@ -12,8 +12,11 @@ import com.google.android.material.tabs.TabLayout;
 import com.redflag.lawncare.common.TabsAdapter;
 import com.redflag.lawncare.settings.SettingsActivity;
 
+import java.util.Locale;
+
 
 public class MainActivity extends AppCompatActivity {
+    protected Locale french = new Locale("fr");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +38,12 @@ public class MainActivity extends AppCompatActivity {
 
     void setTabsAndViewPager() {
         TabLayout tabLayout = findViewById(R.id.bottomTab);
-        tabLayout.addTab(tabLayout.newTab().setText("Home"));
-        tabLayout.addTab(tabLayout.newTab().setText("Book"));
-        tabLayout.addTab(tabLayout.newTab().setText("FAQ"));
-        tabLayout.addTab(tabLayout.newTab().setText("Contact"));
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+            tabLayout.addTab(tabLayout.newTab().setText("Home"));
+            tabLayout.addTab(tabLayout.newTab().setText("Book"));
+            tabLayout.addTab(tabLayout.newTab().setText("FAQ"));
+            tabLayout.addTab(tabLayout.newTab().setText("Contact"));
+            tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         TabsAdapter tabsAdapter = new TabsAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         final ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
