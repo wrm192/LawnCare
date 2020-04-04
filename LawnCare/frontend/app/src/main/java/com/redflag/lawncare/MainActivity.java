@@ -14,7 +14,6 @@ import com.redflag.lawncare.settings.SettingsActivity;
 
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,11 +34,12 @@ public class MainActivity extends AppCompatActivity {
 
     void setTabsAndViewPager() {
         TabLayout tabLayout = findViewById(R.id.bottomTab);
-        tabLayout.addTab(tabLayout.newTab().setText("Home"));
-        tabLayout.addTab(tabLayout.newTab().setText("Book"));
-        tabLayout.addTab(tabLayout.newTab().setText("FAQ"));
-        tabLayout.addTab(tabLayout.newTab().setText("Contact"));
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+            tabLayout.addTab(tabLayout.newTab().setText("Home"));
+            tabLayout.addTab(tabLayout.newTab().setText("Book"));
+            tabLayout.addTab(tabLayout.newTab().setText("FAQ"));
+            tabLayout.addTab(tabLayout.newTab().setText("Contact"));
+            tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         TabsAdapter tabsAdapter = new TabsAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         final ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);

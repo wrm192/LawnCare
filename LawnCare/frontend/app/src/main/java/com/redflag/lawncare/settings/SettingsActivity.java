@@ -28,7 +28,7 @@ public class SettingsActivity extends AppCompatActivity{
 
         Spinner dropdown = findViewById(R.id.spinner);
 
-        String[] locales = new String[] {" ", "English", "French"};
+        String[] locales = new String[] {" ", "English", "Français"};
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, locales);
         dropdown.setAdapter(adapter);
@@ -37,18 +37,18 @@ public class SettingsActivity extends AppCompatActivity{
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 System.out.println("item selected");
                 String val = (String)parent.getItemAtPosition(position);
-                if(val.equals("French")){
+                if(val.equals("Français")){
                     Locale.setDefault(french);
-                    Configuration conig = getBaseContext().getResources().getConfiguration();
-                    conig.setLocale(french);
-                    getBaseContext().getResources().updateConfiguration(conig, getBaseContext().getResources().getDisplayMetrics());
+                    Configuration config = getBaseContext().getResources().getConfiguration();
+                    config.setLocale(french);
+                    getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
                     finish();
                     startActivity(new Intent(SettingsActivity.this, MainActivity.class));
                 } else if(val.equals("English"))  {
                     Locale.setDefault(english);
-                    Configuration conig = getBaseContext().getResources().getConfiguration();
-                    conig.setLocale(english);
-                    getBaseContext().getResources().updateConfiguration(conig, getBaseContext().getResources().getDisplayMetrics());
+                    Configuration config = getBaseContext().getResources().getConfiguration();
+                    config.setLocale(english);
+                    getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
                     finish();
                     startActivity(new Intent(SettingsActivity.this, MainActivity.class));
 
