@@ -12,12 +12,8 @@ import com.google.android.material.tabs.TabLayout;
 import com.redflag.lawncare.common.TabsAdapter;
 import com.redflag.lawncare.settings.SettingsActivity;
 
-import java.util.Locale;
-
 
 public class MainActivity extends AppCompatActivity {
-    protected Locale french = new Locale("fr");
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
