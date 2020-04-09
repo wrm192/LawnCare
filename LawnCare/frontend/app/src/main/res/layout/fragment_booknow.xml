@@ -19,7 +19,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/Header"
+                android:id="@+id/bookNowHeader"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
@@ -36,6 +36,7 @@
                 android:hint="@string/action_name">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nameE"
                     android:layout_width="match_parent"
                     android:layout_height="40dp" />
 
@@ -49,6 +50,7 @@
                 android:hint="@string/action_phone">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/phoneNumE"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="phone" />
@@ -62,7 +64,7 @@
                 android:hint="@string/action_address">
 
                 <com.google.android.material.textfield.TextInputEditText
-
+                    android:id="@+id/addressE"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>

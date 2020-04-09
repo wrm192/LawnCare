@@ -14,6 +14,7 @@ import com.redflag.lawncare.home.HomeFragment;
 public class TabsAdapter extends FragmentStatePagerAdapter {
 
     private int tabs;
+    private Fragment mCurrent;
 
     public TabsAdapter(@NonNull FragmentManager fm, int tabs) {
         super(fm);
@@ -31,18 +32,26 @@ public class TabsAdapter extends FragmentStatePagerAdapter {
         switch (position){
             case 0:
                 // Contact
-                return new HomeFragment();
+                mCurrent = new HomeFragment();
+                return mCurrent;
             case 1:
                 // Book now
-                return new BookNowFragment();
+                mCurrent = new BookNowFragment();
+                return mCurrent;
             case 2:
                 // FAQ
-                return new FaqFragment();
+                mCurrent = new FaqFragment();
+                return mCurrent;
             case 3:
-                return new ContactFragment();
+                mCurrent = new ContactFragment();
+                return mCurrent;
             default:
                 return null;
         }
+    }
+
+    public Fragment getmCurrent() {
+        return mCurrent;
     }
 }
 

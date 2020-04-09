@@ -10,20 +10,20 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.redflag.lawncare.MainActivity;
 
-public class VerificationActivity {
+public class VerificationService {
 
     private OnSuccessListener<SafetyNetApi.RecaptchaTokenResponse> listener;
     private OnFailureListener failureListener;
     private AppCompatActivity component;
 
-    public VerificationActivity(OnSuccessListener<SafetyNetApi.RecaptchaTokenResponse> listener, OnFailureListener failureListener, AppCompatActivity component){
+    public VerificationService(OnSuccessListener<SafetyNetApi.RecaptchaTokenResponse> listener, OnFailureListener failureListener, AppCompatActivity component){
         this.failureListener = failureListener;
         this.listener = listener;
         this.component = component;
         this.checkCaptchaBox();
     }
 
-    public VerificationActivity(OnSuccessListener<SafetyNetApi.RecaptchaTokenResponse> listener, OnFailureListener failureListener, Fragment fragment){
+    public VerificationService(OnSuccessListener<SafetyNetApi.RecaptchaTokenResponse> listener, OnFailureListener failureListener, Fragment fragment){
         this(listener, failureListener, (MainActivity)fragment.getActivity());
     }
 

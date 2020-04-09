@@ -20,7 +20,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/Header"
+                android:id="@+id/header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
@@ -29,39 +29,42 @@
                 android:text="@string/contact_title" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/name"
+                android:id="@+id/con_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:hint="@string/action_name">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/con_nameE"
                     android:layout_width="match_parent"
                     android:layout_height="40dp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/phoneNum"
+                android:id="@+id/con_phoneNum"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="20dp"
                 android:hint="@string/action_phone">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/con_phoneNumE"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="phone"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/email"
+                android:id="@+id/con_email"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="20dp"
                 android:hint="@string/contact_email_label">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/con_emailE"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"/>
