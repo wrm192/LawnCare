@@ -20,7 +20,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
 import com.redflag.lawncare.R;
 import com.redflag.lawncare.common.email.EmailService;
-import com.redflag.lawncare.common.recaptcha.VerificationActivity;
+import com.redflag.lawncare.common.recaptcha.VerificationService;
 
 public class ContactFragment extends Fragment {
 
@@ -31,9 +31,9 @@ public class ContactFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_contact, container, false);
 
 
-        TextInputLayout nameInput = rootView.findViewById(R.id.name);
-        TextInputLayout phoneNumbInput = rootView.findViewById(R.id.phoneNum);
-        TextInputLayout emailInput = rootView.findViewById(R.id.email);
+        TextInputLayout nameInput = rootView.findViewById(R.id.con_name);
+        TextInputLayout phoneNumbInput = rootView.findViewById(R.id.con_phoneNum);
+        TextInputLayout emailInput = rootView.findViewById(R.id.con_email);
 
         EditText inquiryInput = rootView.findViewById(R.id.inquiryInput);
 
@@ -68,7 +68,7 @@ public class ContactFragment extends Fragment {
                     clearError(phoneNumb);
                     clearError(email);
 
-                    new VerificationActivity(new OnSuccessListener<SafetyNetApi.RecaptchaTokenResponse>() {
+                    new VerificationService(new OnSuccessListener<SafetyNetApi.RecaptchaTokenResponse>() {
                         @Override
                         public void onSuccess(SafetyNetApi.RecaptchaTokenResponse response) {
                             // Indicates communication with reCAPTCHA service was

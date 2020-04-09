@@ -19,7 +19,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
 import com.redflag.lawncare.R;
 import com.redflag.lawncare.common.email.EmailService;
-import com.redflag.lawncare.common.recaptcha.VerificationActivity;
+import com.redflag.lawncare.common.recaptcha.VerificationService;
 
 public class BookNowFragment extends Fragment {
 
@@ -55,7 +55,7 @@ public class BookNowFragment extends Fragment {
                     clearError(address);
                     clearError(name);
                     clearError(phoneNumber);
-                    new VerificationActivity(new OnSuccessListener<SafetyNetApi.RecaptchaTokenResponse>() {
+                    new VerificationService(new OnSuccessListener<SafetyNetApi.RecaptchaTokenResponse>() {
                         @Override
                         public void onSuccess(SafetyNetApi.RecaptchaTokenResponse response) {
                             // Indicates communication with reCAPTCHA service was
