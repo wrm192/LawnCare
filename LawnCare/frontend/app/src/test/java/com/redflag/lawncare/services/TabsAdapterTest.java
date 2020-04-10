@@ -1,9 +1,10 @@
-package com.redflag.lawncare;
+package com.redflag.lawncare.services;
 
 import androidx.fragment.app.Fragment;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.rule.ActivityTestRule;
 
+import com.redflag.lawncare.MainActivity;
 import com.redflag.lawncare.book.BookNowFragment;
 import com.redflag.lawncare.common.TabsAdapter;
 import com.redflag.lawncare.contact.ContactFragment;

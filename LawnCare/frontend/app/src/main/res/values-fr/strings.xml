@@ -19,6 +19,7 @@
     <string name="contact_phoneNumber_label">Numéro de téléphone</string>
     <string name="contact_name_hint">Nom</string>
     <string name="contact_name_label">Nom</string>
+    <string name="faq_header">FAQ</string>
     <string name="contact_title">Nous Contacterons!</string>
     <string name="book_now_title">Réserver</string>
     <string name="settings_set_locale">Langue:</string>
