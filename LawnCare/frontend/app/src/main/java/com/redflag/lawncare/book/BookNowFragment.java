@@ -65,7 +65,7 @@ public class BookNowFragment extends Fragment {
                                     name.getText().toString() + " is looking for a consultation \ndetails:\nPhone number: "
                                             + phoneNumber.getText().toString() + "\nAddress: " + address.getText().toString());
 
-                            Toast.makeText(getContext(), getResources().getString(R.string.sent_consultation), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), getResources().getString(R.string.sent_consultation), Toast.LENGTH_LONG).show();
                             address.setText("");
                             name.setText("");
                             phoneNumber.setText("");
