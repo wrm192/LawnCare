@@ -19,7 +19,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
 import com.redflag.lawncare.R;
-import com.redflag.lawncare.common.email.EmailService;
+import com.redflag.lawncare.common.email.EmailBuilder;
 import com.redflag.lawncare.common.recaptcha.VerificationService;
 
 public class ContactFragment extends Fragment {
@@ -74,7 +74,7 @@ public class ContactFragment extends Fragment {
                             // Indicates communication with reCAPTCHA service was
                             // successful.
                             String userResponseToken = response.getTokenResult();
-                            EmailService.buildEmail("Contact Us - " + name.getText().toString(),
+                            EmailBuilder.buildEmail("Contact Us - " + name.getText().toString(),
                                     "Name: " + name.getText().toString() + "\nPhone: " + phoneNumb.getText().toString() + "\nEmail: " + email.getText().toString() + "\n\nInquiry:\n" + inquiry);
                             Toast.makeText(getContext(), getResources().getString(R.string.sent_contact), Toast.LENGTH_SHORT).show();
                             name.setText("");

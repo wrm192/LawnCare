@@ -18,7 +18,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
 import com.redflag.lawncare.R;
-import com.redflag.lawncare.common.email.EmailService;
+import com.redflag.lawncare.common.email.EmailBuilder;
 import com.redflag.lawncare.common.recaptcha.VerificationService;
 
 public class BookNowFragment extends Fragment {
@@ -61,7 +61,7 @@ public class BookNowFragment extends Fragment {
                             // Indicates communication with reCAPTCHA service was
                             // successful.
                             String userResponseToken = response.getTokenResult();
-                            EmailService.buildEmail("Consultation - " + name.getText().toString(),
+                            EmailBuilder.buildEmail("Consultation - " + name.getText().toString(),
                                     name.getText().toString() + " is looking for a consultation \ndetails:\nPhone number: "
                                             + phoneNumber.getText().toString() + "\nAddress: " + address.getText().toString());
 

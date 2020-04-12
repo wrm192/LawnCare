@@ -26,7 +26,7 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import javax.mail.internet.MimeUtility;
 
-public class EmailService {
+public class EmailBuilder {
 
     private static final String protocol = "smtp";
     private static final String smtpHost = "smtp.gmail.com";
@@ -41,7 +41,7 @@ public class EmailService {
     /**
      * class must be used statically
      */
-    private EmailService() { }
+    private EmailBuilder() { }
 
     private static class EmailTask extends AsyncTask<Void, Void, Boolean> {
 
