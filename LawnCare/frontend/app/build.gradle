@@ -69,7 +69,7 @@ dependencies {
 
 
 
-    testImplementation 'org.robolectric:robolectric:4.0'
+    testImplementation 'org.robolectric:robolectric:4.2.1'
     testImplementation 'com.21buttons:fragment-test-rule:2.0.1'
     debugImplementation 'com.21buttons:fragment-test-rule-extras:2.0.1'
 

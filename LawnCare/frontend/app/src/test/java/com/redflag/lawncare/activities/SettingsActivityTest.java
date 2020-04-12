@@ -68,14 +68,4 @@ public class SettingsActivityTest {
         onView(withId(R.id.localeLabel)).check(matches(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)));
     }
 
-    @Test
-    public void testSpinnerValues() {
-        onView(withId(R.id.spinner)).perform(click());
-       /* onData(allOf(is(instanceOf(String.class)), is("English")))
-                .perform(click());
-        assertTrue(settingsActivity.isDestroyed());
-*/
-    }
-
-
 }
