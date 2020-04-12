@@ -61,15 +61,15 @@ public class BookNowFragment extends Fragment {
                             // Indicates communication with reCAPTCHA service was
                             // successful.
                             String userResponseToken = response.getTokenResult();
-                            new EmailService("Consultation - " + name.getText().toString(), name.getText().toString() + " is looking for a consultation \ndetails:\nPhone number: " + phoneNumber.getText().toString() + "\nAddress: " + address.getText().toString());
+                            EmailService.buildEmail("Consultation - " + name.getText().toString(),
+                                    name.getText().toString() + " is looking for a consultation \ndetails:\nPhone number: "
+                                            + phoneNumber.getText().toString() + "\nAddress: " + address.getText().toString());
+
                             Toast.makeText(getContext(), getResources().getString(R.string.sent_consultation), Toast.LENGTH_SHORT).show();
                             address.setText("");
                             name.setText("");
                             phoneNumber.setText("");
-                            if (!userResponseToken.isEmpty()) {
-                                // Validate the user response token using the
-                                // reCAPTCHA siteverify API.
-                            }
+
                         }
                     }, new OnFailureListener() {
                         @Override

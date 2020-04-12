@@ -39,14 +39,11 @@ public class EmailService {
     private static final String receiveEmail1 = "wrm192@gmail.com";
 
     /**
-     * Initialize the email setting including following parameters
+     * class must be used statically
      */
+    private EmailService() { }
 
-    public EmailService(String subject, String content) {
-        new EmailTask(subject, content).execute();
-    }
-
-    private static class EmailTask extends AsyncTask<Void, Void, Void> {
+    private static class EmailTask extends AsyncTask<Void, Void, Boolean> {
 
         String subject, content;
 
@@ -56,21 +53,12 @@ public class EmailService {
         }
 
         @Override
-        protected Void doInBackground(Void... voids) {
-            sendEmail(this.subject, this.content);
-            return null;
+        protected Boolean doInBackground(Void... voids) {
+            return sendEmail(this.subject, this.content);
         }
     }
 
-    /**
-     * Send a text email
-     * @param subject
-     * @param content
-     * @return
-     * @throws AddressException
-     * @throws MessagingException
-     */
-    private static void sendEmail(String subject, String content) {
+    private static boolean sendEmail(String subject, String content) {
         try {
             Properties properties = new Properties();
             // Set transport protocol
@@ -101,11 +89,23 @@ public class EmailService {
             transport.connect(sendEmail, password);
             transport.sendMessage(message, message.getAllRecipients());
             transport.close();
-            System.out.println("~~email has been sent~~");
+            return true;
         } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("in exception");
+            return false;
         }
+    }
+
+    /**
+     * Send a text email
+     * @param subject
+     * @param content
+     * @return
+     * @throws AddressException
+     * @throws MessagingException
+     */
+    public static boolean buildEmail(String subject, String content) {
+        EmailTask et = new EmailTask(subject, content);
+        return et.doInBackground();
     }
 
     /**

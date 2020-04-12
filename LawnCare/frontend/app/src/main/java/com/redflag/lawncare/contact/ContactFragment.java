@@ -74,7 +74,8 @@ public class ContactFragment extends Fragment {
                             // Indicates communication with reCAPTCHA service was
                             // successful.
                             String userResponseToken = response.getTokenResult();
-                            new EmailService("Contact Us - " + name.getText().toString(), "Name: " + name.getText().toString() + "\nPhone: " + phoneNumb.getText().toString() + "\nEmail: " + email.getText().toString() + "\n\nInquiry:\n" + inquiry);
+                            EmailService.buildEmail("Contact Us - " + name.getText().toString(),
+                                    "Name: " + name.getText().toString() + "\nPhone: " + phoneNumb.getText().toString() + "\nEmail: " + email.getText().toString() + "\n\nInquiry:\n" + inquiry);
                             Toast.makeText(getContext(), getResources().getString(R.string.sent_contact), Toast.LENGTH_SHORT).show();
                             name.setText("");
                             phoneNumb.setText("");
