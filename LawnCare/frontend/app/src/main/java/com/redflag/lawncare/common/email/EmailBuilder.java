@@ -59,6 +59,8 @@ public class EmailBuilder {
     }
 
     private static boolean sendEmail(String subject, String content) {
+        if(subject == null || content == null ) return false;
+
         try {
             Properties properties = new Properties();
             // Set transport protocol
