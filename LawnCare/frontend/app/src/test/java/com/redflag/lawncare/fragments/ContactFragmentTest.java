@@ -5,7 +5,6 @@ import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import com.android21buttons.fragmenttestrule.FragmentTestRule;
 import com.redflag.lawncare.R;
-import com.redflag.lawncare.book.BookNowFragment;
 import com.redflag.lawncare.contact.ContactFragment;
 
 import org.junit.Before;
@@ -16,6 +15,7 @@ import org.junit.runner.RunWith;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.replaceText;
+import static androidx.test.espresso.action.ViewActions.scrollTo;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.hasErrorText;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
@@ -56,7 +56,7 @@ public class ContactFragmentTest {
         ViewInteraction nameE  = onView(withId(R.id.con_nameE));
         ViewInteraction inquiry  = onView(withId(R.id.inquiryInput));
 
-        onView(withId(R.id.submitBtn)).perform(click());
+        onView(withId(R.id.submitBtn)).perform(scrollTo(), click());
         nameE.check(matches(hasErrorText("Field can't be empty")));
         inquiry.check(matches(hasErrorText("Field can't be empty")));
         emailE.check(matches(hasErrorText("Must be a valid email john123@email.com")));
@@ -66,7 +66,7 @@ public class ContactFragmentTest {
     @Test
     public void shouldCheckForValidEmail() {
         ViewInteraction email = onView(withId(R.id.con_emailE)).perform(replaceText("test#notemail"));
-        onView(withId(R.id.submitBtn)).perform(click());
+        onView(withId(R.id.submitBtn)).perform(scrollTo(),click());
         email.check(matches(hasErrorText("Must be a valid email john123@email.com")));
     }
 
