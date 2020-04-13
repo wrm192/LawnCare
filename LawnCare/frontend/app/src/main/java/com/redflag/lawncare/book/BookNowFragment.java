@@ -55,12 +55,12 @@ public class BookNowFragment extends Fragment {
                     clearError(address);
                     clearError(name);
                     clearError(phoneNumber);
+
                     new VerificationService(new OnSuccessListener<SafetyNetApi.RecaptchaTokenResponse>() {
                         @Override
                         public void onSuccess(SafetyNetApi.RecaptchaTokenResponse response) {
                             // Indicates communication with reCAPTCHA service was
                             // successful.
-                            String userResponseToken = response.getTokenResult();
                             EmailBuilder.buildEmail("Consultation - " + name.getText().toString(),
                                     name.getText().toString() + " is looking for a consultation \ndetails:\nPhone number: "
                                             + phoneNumber.getText().toString() + "\nAddress: " + address.getText().toString());
@@ -69,7 +69,6 @@ public class BookNowFragment extends Fragment {
                             address.setText("");
                             name.setText("");
                             phoneNumber.setText("");
-
                         }
                     }, new OnFailureListener() {
                         @Override

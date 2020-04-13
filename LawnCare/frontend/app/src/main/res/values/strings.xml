@@ -30,5 +30,8 @@
     <string name="sent_contact">Inquiry Sent</string>
     <string name="home_title">About Us</string>
     <string name="home_text">EZMow is lawn care made easy, book a service with us and have a lawn mowing robot come to your door steps to take care of the rest! Use the contact us form for any inquiries.**Employee supervisor will be on site.**</string>
+    <string name="perf_contact_choice">Preferred method of contact:</string>
+    <string name="perf_contact_choice_email">Email</string>
+    <string name="perf_contact_choice_phone">Phone</string>
 
 </resources>

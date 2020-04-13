@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -24,6 +25,8 @@ import com.redflag.lawncare.common.recaptcha.VerificationService;
 
 public class ContactFragment extends Fragment {
 
+    private boolean preferEmail = true;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,@Nullable Bundle savedInstanceState) {
@@ -36,6 +39,8 @@ public class ContactFragment extends Fragment {
         TextInputLayout emailInput = rootView.findViewById(R.id.con_email);
 
         EditText inquiryInput = rootView.findViewById(R.id.inquiryInput);
+
+        setupRadioButton(rootView);
 
         Button submit = rootView.findViewById(R.id.submitBtn);
         submit.setOnClickListener(new View.OnClickListener() {
@@ -75,7 +80,8 @@ public class ContactFragment extends Fragment {
                             // successful.
                             String userResponseToken = response.getTokenResult();
                             EmailBuilder.buildEmail("Contact Us - " + name.getText().toString(),
-                                    "Name: " + name.getText().toString() + "\nPhone: " + phoneNumb.getText().toString() + "\nEmail: " + email.getText().toString() + "\n\nInquiry:\n" + inquiry);
+                                    "Name: " + name.getText().toString() + "\nPhone: " + phoneNumb.getText().toString() + "\nEmail: " + email.getText().toString() +
+                                            "\nPreferred Method of contact: " + ((preferEmail) ? "Email": "Phone") + "\n\nInquiry:\n" + inquiry);
                             Toast.makeText(getContext(), getResources().getString(R.string.sent_contact), Toast.LENGTH_SHORT).show();
                             name.setText("");
                             phoneNumb.setText("");
@@ -111,6 +117,26 @@ public class ContactFragment extends Fragment {
 
         return rootView;
 
+
+    }
+
+    public void setupRadioButton(View view) {
+        // Is the button now checked?
+        RadioGroup radioGroup = (RadioGroup) view.findViewById(R.id.pref_group);
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch(checkedId) {
+                    case R.id.pref_email:
+                        preferEmail = true;
+                        break;
+                    case R.id.pref_phone:
+                        preferEmail = false;
+                        break;
+                }
+            }
+        });
 
     }
 

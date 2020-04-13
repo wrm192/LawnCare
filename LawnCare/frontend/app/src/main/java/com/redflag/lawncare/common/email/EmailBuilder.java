@@ -45,6 +45,12 @@ public class EmailBuilder {
 
     private static class EmailTask extends AsyncTask<Void, Void, Boolean> {
 
+        public interface AsyncResponse {
+            void processFinish(boolean result);
+        }
+
+        public AsyncResponse delegate = null; // track result
+
         String subject, content;
 
         EmailTask(String subject, String content) {
@@ -59,8 +65,6 @@ public class EmailBuilder {
     }
 
     private static boolean sendEmail(String subject, String content) {
-        if(subject == null || content == null ) return false;
-
         try {
             Properties properties = new Properties();
             // Set transport protocol
@@ -93,6 +97,7 @@ public class EmailBuilder {
             transport.close();
             return true;
         } catch (Exception e) {
+            e.printStackTrace();
             return false;
         }
     }
@@ -106,8 +111,8 @@ public class EmailBuilder {
      * @throws MessagingException
      */
     public static boolean buildEmail(String subject, String content) {
-        EmailTask et = new EmailTask(subject, content);
-        return et.doInBackground();
+        new EmailTask(subject, content).execute();
+        return true; //remove later when find the right way to handle response
     }
 
     /**
