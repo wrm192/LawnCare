@@ -33,4 +33,8 @@
     <string name="perf_contact_choice">Méthode de contact préférée:</string>
     <string name="perf_contact_choice_email">Email</string>
     <string name="perf_contact_choice_phone">Télé</string>
+    <string name="calculation_title">Prix estimé</string>
+    <string name="input_1">Zone</string>
+    <string name="input_2">Obstructions</string>
+
 </resources>

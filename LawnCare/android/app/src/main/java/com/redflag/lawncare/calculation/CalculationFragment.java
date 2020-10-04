@@ -17,7 +17,7 @@ import com.redflag.lawncare.R;
 public class CalculationFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_booknow,
+        View view = inflater.inflate(R.layout.fragment_calculation,
                 container, false);
 
 
