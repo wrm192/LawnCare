@@ -33,5 +33,11 @@
     <string name="perf_contact_choice">Preferred method of contact:</string>
     <string name="perf_contact_choice_email">Email</string>
     <string name="perf_contact_choice_phone">Phone</string>
+    <string name="calculation_title">Estimated Price!</string>
+    <string name="input_1">Input 1</string>
+    <string name="input_2">Input 2</string>
+
+
+
 
 </resources>

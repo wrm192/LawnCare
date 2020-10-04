@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.redflag.lawncare.book.BookNowFragment;
+import com.redflag.lawncare.calculation.CalculationFragment;
 import com.redflag.lawncare.contact.ContactFragment;
 import com.redflag.lawncare.faq.FaqFragment;
 import com.redflag.lawncare.home.HomeFragment;
@@ -43,7 +44,12 @@ public class TabsAdapter extends FragmentStatePagerAdapter {
                 mCurrent = new FaqFragment();
                 return mCurrent;
             case 3:
+                // Contact
                 mCurrent = new ContactFragment();
+                return mCurrent;
+            case 4:
+                //Calculation
+                mCurrent = new CalculationFragment();
                 return mCurrent;
             default:
                 return null;
