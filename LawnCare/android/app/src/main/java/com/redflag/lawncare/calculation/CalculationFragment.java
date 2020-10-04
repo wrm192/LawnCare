@@ -44,7 +44,6 @@ public class CalculationFragment extends Fragment {
         });
 
         return view;
-
     }
          private boolean checkForError(EditText text, boolean errorState) {
             if("".equals(text.getText().toString())){
