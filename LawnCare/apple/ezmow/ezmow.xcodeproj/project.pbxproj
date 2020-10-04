@@ -1,0 +1,579 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		47A27E5D252A2AC4006440D9 /* ezmowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A27E5C252A2AC4006440D9 /* ezmowApp.swift */; };
+		47A27E5F252A2AC4006440D9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A27E5E252A2AC4006440D9 /* ContentView.swift */; };
+		47A27E61252A2AC4006440D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47A27E60252A2AC4006440D9 /* Assets.xcassets */; };
+		47A27E64252A2AC4006440D9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47A27E63252A2AC4006440D9 /* Preview Assets.xcassets */; };
+		47A27E6F252A2AC5006440D9 /* ezmowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A27E6E252A2AC5006440D9 /* ezmowTests.swift */; };
+		47A27E7A252A2AC5006440D9 /* ezmowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A27E79252A2AC5006440D9 /* ezmowUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		47A27E6B252A2AC5006440D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47A27E51252A2AC4006440D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 47A27E58252A2AC4006440D9;
+			remoteInfo = ezmow;
+		};
+		47A27E76252A2AC5006440D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47A27E51252A2AC4006440D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 47A27E58252A2AC4006440D9;
+			remoteInfo = ezmow;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		47A27E59252A2AC4006440D9 /* ezmow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ezmow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		47A27E5C252A2AC4006440D9 /* ezmowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ezmowApp.swift; sourceTree = "<group>"; };
+		47A27E5E252A2AC4006440D9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		47A27E60252A2AC4006440D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		47A27E63252A2AC4006440D9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		47A27E65252A2AC4006440D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47A27E6A252A2AC5006440D9 /* ezmowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ezmowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		47A27E6E252A2AC5006440D9 /* ezmowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ezmowTests.swift; sourceTree = "<group>"; };
+		47A27E70252A2AC5006440D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47A27E75252A2AC5006440D9 /* ezmowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ezmowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		47A27E79252A2AC5006440D9 /* ezmowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ezmowUITests.swift; sourceTree = "<group>"; };
+		47A27E7B252A2AC5006440D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		47A27E56252A2AC4006440D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47A27E67252A2AC5006440D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47A27E72252A2AC5006440D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		47A27E50252A2AC4006440D9 = {
+			isa = PBXGroup;
+			children = (
+				47A27E5B252A2AC4006440D9 /* ezmow */,
+				47A27E6D252A2AC5006440D9 /* ezmowTests */,
+				47A27E78252A2AC5006440D9 /* ezmowUITests */,
+				47A27E5A252A2AC4006440D9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		47A27E5A252A2AC4006440D9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				47A27E59252A2AC4006440D9 /* ezmow.app */,
+				47A27E6A252A2AC5006440D9 /* ezmowTests.xctest */,
+				47A27E75252A2AC5006440D9 /* ezmowUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		47A27E5B252A2AC4006440D9 /* ezmow */ = {
+			isa = PBXGroup;
+			children = (
+				47A27E5C252A2AC4006440D9 /* ezmowApp.swift */,
+				47A27E5E252A2AC4006440D9 /* ContentView.swift */,
+				47A27E60252A2AC4006440D9 /* Assets.xcassets */,
+				47A27E65252A2AC4006440D9 /* Info.plist */,
+				47A27E62252A2AC4006440D9 /* Preview Content */,
+			);
+			path = ezmow;
+			sourceTree = "<group>";
+		};
+		47A27E62252A2AC4006440D9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				47A27E63252A2AC4006440D9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		47A27E6D252A2AC5006440D9 /* ezmowTests */ = {
+			isa = PBXGroup;
+			children = (
+				47A27E6E252A2AC5006440D9 /* ezmowTests.swift */,
+				47A27E70252A2AC5006440D9 /* Info.plist */,
+			);
+			path = ezmowTests;
+			sourceTree = "<group>";
+		};
+		47A27E78252A2AC5006440D9 /* ezmowUITests */ = {
+			isa = PBXGroup;
+			children = (
+				47A27E79252A2AC5006440D9 /* ezmowUITests.swift */,
+				47A27E7B252A2AC5006440D9 /* Info.plist */,
+			);
+			path = ezmowUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		47A27E58252A2AC4006440D9 /* ezmow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47A27E7E252A2AC5006440D9 /* Build configuration list for PBXNativeTarget "ezmow" */;
+			buildPhases = (
+				47A27E55252A2AC4006440D9 /* Sources */,
+				47A27E56252A2AC4006440D9 /* Frameworks */,
+				47A27E57252A2AC4006440D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ezmow;
+			productName = ezmow;
+			productReference = 47A27E59252A2AC4006440D9 /* ezmow.app */;
+			productType = "com.apple.product-type.application";
+		};
+		47A27E69252A2AC5006440D9 /* ezmowTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47A27E81252A2AC5006440D9 /* Build configuration list for PBXNativeTarget "ezmowTests" */;
+			buildPhases = (
+				47A27E66252A2AC5006440D9 /* Sources */,
+				47A27E67252A2AC5006440D9 /* Frameworks */,
+				47A27E68252A2AC5006440D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				47A27E6C252A2AC5006440D9 /* PBXTargetDependency */,
+			);
+			name = ezmowTests;
+			productName = ezmowTests;
+			productReference = 47A27E6A252A2AC5006440D9 /* ezmowTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		47A27E74252A2AC5006440D9 /* ezmowUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47A27E84252A2AC5006440D9 /* Build configuration list for PBXNativeTarget "ezmowUITests" */;
+			buildPhases = (
+				47A27E71252A2AC5006440D9 /* Sources */,
+				47A27E72252A2AC5006440D9 /* Frameworks */,
+				47A27E73252A2AC5006440D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				47A27E77252A2AC5006440D9 /* PBXTargetDependency */,
+			);
+			name = ezmowUITests;
+			productName = ezmowUITests;
+			productReference = 47A27E75252A2AC5006440D9 /* ezmowUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		47A27E51252A2AC4006440D9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					47A27E58252A2AC4006440D9 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					47A27E69252A2AC5006440D9 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 47A27E58252A2AC4006440D9;
+					};
+					47A27E74252A2AC5006440D9 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 47A27E58252A2AC4006440D9;
+					};
+				};
+			};
+			buildConfigurationList = 47A27E54252A2AC4006440D9 /* Build configuration list for PBXProject "ezmow" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 47A27E50252A2AC4006440D9;
+			productRefGroup = 47A27E5A252A2AC4006440D9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				47A27E58252A2AC4006440D9 /* ezmow */,
+				47A27E69252A2AC5006440D9 /* ezmowTests */,
+				47A27E74252A2AC5006440D9 /* ezmowUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		47A27E57252A2AC4006440D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47A27E64252A2AC4006440D9 /* Preview Assets.xcassets in Resources */,
+				47A27E61252A2AC4006440D9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47A27E68252A2AC5006440D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47A27E73252A2AC5006440D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		47A27E55252A2AC4006440D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47A27E5F252A2AC4006440D9 /* ContentView.swift in Sources */,
+				47A27E5D252A2AC4006440D9 /* ezmowApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47A27E66252A2AC5006440D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47A27E6F252A2AC5006440D9 /* ezmowTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47A27E71252A2AC5006440D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47A27E7A252A2AC5006440D9 /* ezmowUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		47A27E6C252A2AC5006440D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 47A27E58252A2AC4006440D9 /* ezmow */;
+			targetProxy = 47A27E6B252A2AC5006440D9 /* PBXContainerItemProxy */;
+		};
+		47A27E77252A2AC5006440D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 47A27E58252A2AC4006440D9 /* ezmow */;
+			targetProxy = 47A27E76252A2AC5006440D9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		47A27E7C252A2AC5006440D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		47A27E7D252A2AC5006440D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		47A27E7F252A2AC5006440D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ezmow/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ezmow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.algonquin.ezmow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		47A27E80252A2AC5006440D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ezmow/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ezmow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.algonquin.ezmow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		47A27E82252A2AC5006440D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ezmowTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.algonquin.ezmowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ezmow.app/ezmow";
+			};
+			name = Debug;
+		};
+		47A27E83252A2AC5006440D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ezmowTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.algonquin.ezmowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ezmow.app/ezmow";
+			};
+			name = Release;
+		};
+		47A27E85252A2AC5006440D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ezmowUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.algonquin.ezmowUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ezmow;
+			};
+			name = Debug;
+		};
+		47A27E86252A2AC5006440D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ezmowUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.algonquin.ezmowUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ezmow;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		47A27E54252A2AC4006440D9 /* Build configuration list for PBXProject "ezmow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47A27E7C252A2AC5006440D9 /* Debug */,
+				47A27E7D252A2AC5006440D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47A27E7E252A2AC5006440D9 /* Build configuration list for PBXNativeTarget "ezmow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47A27E7F252A2AC5006440D9 /* Debug */,
+				47A27E80252A2AC5006440D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47A27E81252A2AC5006440D9 /* Build configuration list for PBXNativeTarget "ezmowTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47A27E82252A2AC5006440D9 /* Debug */,
+				47A27E83252A2AC5006440D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47A27E84252A2AC5006440D9 /* Build configuration list for PBXNativeTarget "ezmowUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47A27E85252A2AC5006440D9 /* Debug */,
+				47A27E86252A2AC5006440D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 47A27E51252A2AC4006440D9 /* Project object */;
+}

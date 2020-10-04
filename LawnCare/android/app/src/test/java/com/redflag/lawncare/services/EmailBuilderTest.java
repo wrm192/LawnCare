@@ -22,4 +22,5 @@ public class EmailBuilderTest {
         assertFalse(EmailBuilder.buildEmail(SUBJECT,null));
         assertFalse(EmailBuilder.buildEmail(null,null));
     }
+
 }
