@@ -34,8 +34,8 @@
     <string name="perf_contact_choice_email">Email</string>
     <string name="perf_contact_choice_phone">Phone</string>
     <string name="calculation_title">Estimated Price</string>
-    <string name="input_1">Area</string>
-    <string name="input_2">Obstructions</string>
+    <string name="area">Area</string>
+    <string name="obstruction">Obstructions</string>
 
 
 

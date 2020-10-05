@@ -30,28 +30,28 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/input_1"
+                android:id="@+id/area"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:hint="@string/input_1">
+                android:hint="@string/area">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/input1E"
+                    android:id="@+id/areaE"
                     android:layout_width="match_parent"
                     android:layout_height="40dp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/input_2"
+                android:id="@+id/obstruction"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="20dp"
-                android:hint="@string/input_2">
+                android:hint="@string/obstruction">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/input2E"
+                    android:id="@+id/obstructionE"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
             </com.google.android.material.textfield.TextInputLayout>

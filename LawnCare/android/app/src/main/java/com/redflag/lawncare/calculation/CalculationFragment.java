@@ -25,20 +25,20 @@ public class CalculationFragment extends Fragment {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextInputLayout input1_TIL = view.findViewById(R.id.input_1);
-                TextInputLayout input2_TIL = view.findViewById(R.id.input_2);
+                TextInputLayout area_TIL = view.findViewById(R.id.area);
+                TextInputLayout obstruction_TIL = view.findViewById(R.id.obstruction);
 
-                EditText input1 = input1_TIL.getEditText();
-                EditText input2 = input2_TIL.getEditText();
+                EditText area = area_TIL.getEditText();
+                EditText obstruction = obstruction_TIL.getEditText();
 
                 boolean error;
-                error = checkForError(input1, false);
-                error = checkForError(input2, error);
+                error = checkForError(area, false);
+                error = checkForError(obstruction, error);
 
                 if (!error) {
 
-                    clearError(input1);
-                    clearError(input2);
+                    clearError(area);
+                    clearError(obstruction);
                 }
             }
         });
