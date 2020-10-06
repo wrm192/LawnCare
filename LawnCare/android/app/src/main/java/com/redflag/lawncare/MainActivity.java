@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
             tabLayout.addTab(tabLayout.newTab().setText("Book"));
             tabLayout.addTab(tabLayout.newTab().setText("FAQ"));
             tabLayout.addTab(tabLayout.newTab().setText("Contact"));
+            tabLayout.addTab(tabLayout.newTab().setText("Quote"));
             tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         adapter = new TabsAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
