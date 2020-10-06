@@ -17,27 +17,27 @@ struct ContentView: View {
                     self.selectedTab = 1
                 }
                 .tabItem {
-                    Image(systemName: "star")
+                    Image(systemName: "house.fill")
                     Text("HOME")
                 }
             Text ("Tab 2")
                 .tabItem {
-                    Image(systemName: "star.fill")
-                    Text("BOOK")
+                    Image(systemName: "book.fill")
+                    Text("CONSULT")
                 }
             Text ("Tab 3")
                 .tabItem {
-                    Image(systemName: "star")
+                    Image(systemName: "star.fill")
                     Text("FAQ")
                 }
             Text ("Tab 4")
                 .tabItem {
-                    Image(systemName: "star.fill")
+                    Image(systemName: "person.fill")
                     Text("CONTACT")
                 }
             Text ("Tab 5")
                 .tabItem {
-                    Image(systemName: "star")
+                    Image(systemName: "square.and.pencil")
                     Text("QUOTE")
                 }
                 .tag(1)
