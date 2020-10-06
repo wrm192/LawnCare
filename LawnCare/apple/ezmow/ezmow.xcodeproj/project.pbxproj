@@ -13,6 +13,7 @@
 		47A27E64252A2AC4006440D9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47A27E63252A2AC4006440D9 /* Preview Assets.xcassets */; };
 		47A27E6F252A2AC5006440D9 /* ezmowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A27E6E252A2AC5006440D9 /* ezmowTests.swift */; };
 		47A27E7A252A2AC5006440D9 /* ezmowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A27E79252A2AC5006440D9 /* ezmowUITests.swift */; };
+		963970B5252D2DE100F68ABD /* splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 963970B4252D2DE100F68ABD /* splash.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		47A27E75252A2AC5006440D9 /* ezmowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ezmowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		47A27E79252A2AC5006440D9 /* ezmowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ezmowUITests.swift; sourceTree = "<group>"; };
 		47A27E7B252A2AC5006440D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		963970B4252D2DE100F68ABD /* splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = splash.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 		47A27E50252A2AC4006440D9 = {
 			isa = PBXGroup;
 			children = (
+				963970B4252D2DE100F68ABD /* splash.storyboard */,
 				47A27E5B252A2AC4006440D9 /* ezmow */,
 				47A27E6D252A2AC5006440D9 /* ezmowTests */,
 				47A27E78252A2AC5006440D9 /* ezmowUITests */,
@@ -233,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				963970B5252D2DE100F68ABD /* splash.storyboard in Resources */,
 				47A27E64252A2AC4006440D9 /* Preview Assets.xcassets in Resources */,
 				47A27E61252A2AC4006440D9 /* Assets.xcassets in Resources */,
 			);
