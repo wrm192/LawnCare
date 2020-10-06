@@ -18,22 +18,27 @@ struct ContentView: View {
                 }
                 .tabItem {
                     Image(systemName: "star")
-                    Text("One")
+                    Text("HOME")
                 }
             Text ("Tab 2")
                 .tabItem {
                     Image(systemName: "star.fill")
-                    Text("Two")
+                    Text("BOOK")
                 }
             Text ("Tab 3")
                 .tabItem {
                     Image(systemName: "star")
-                    Text("Three")
+                    Text("FAQ")
                 }
             Text ("Tab 4")
                 .tabItem {
                     Image(systemName: "star.fill")
-                    Text("Four")
+                    Text("CONTACT")
+                }
+            Text ("Tab 5")
+                .tabItem {
+                    Image(systemName: "star")
+                    Text("QUOTE")
                 }
                 .tag(1)
         }
