@@ -12,35 +12,32 @@ struct ContentView: View {
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            Text ("Tab 1")
-                .onTapGesture {
-                    self.selectedTab = 1
-                }
+            HomeView()
                 .tabItem {
                     Image(systemName: "house.fill")
                     Text("HOME")
-                }
-            Text ("Tab 2")
+                }.tag(1)
+            Consult()
                 .tabItem {
                     Image(systemName: "book.fill")
                     Text("CONSULT")
-                }
-            Text ("Tab 3")
+                }.tag(2)
+            FAQ()
                 .tabItem {
                     Image(systemName: "star.fill")
                     Text("FAQ")
-                }
-            Text ("Tab 4")
+                }.tag(3)
+            Contact()
                 .tabItem {
                     Image(systemName: "person.fill")
                     Text("CONTACT")
-                }
-            Text ("Tab 5")
+                }.tag(4)
+            Quote()
                 .tabItem {
                     Image(systemName: "square.and.pencil")
                     Text("QUOTE")
                 }
-                .tag(1)
+                .tag(5)
         }
     }
 }
