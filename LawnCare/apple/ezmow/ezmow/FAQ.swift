@@ -10,6 +10,8 @@ import SwiftUI
 struct FAQ: View {
     var body: some View {
         NavigationView{
+            
+            //TODO: make it lead to a page with answers on button push
             Form {
                 Button (action: {}){
                     HStack(spacing: 15) {
