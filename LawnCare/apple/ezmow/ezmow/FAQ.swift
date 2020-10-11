@@ -9,7 +9,38 @@ import SwiftUI
 
 struct FAQ: View {
     var body: some View {
-        Text("FAQ")
+        NavigationView{
+            Form {
+                Button (action: {}){
+                    HStack(spacing: 15) {
+                        Text("Question 1")
+                        Spacer()
+                    }.padding()
+                    .background(Color.white)
+                    .foregroundColor(.black)
+                }.cornerRadius(15)
+                
+                Button (action: {}){
+                    HStack(spacing: 15) {
+                        Text("Question 2")
+                        Spacer()
+                    }.padding()
+                    .background(Color.white)
+                    .foregroundColor(.black)
+                }.cornerRadius(15)
+                
+                Button (action: {}){
+                    HStack(spacing: 15) {
+                        Text("Question 3")
+                        Spacer()
+                    }.padding()
+                    .background(Color.white)
+                    .foregroundColor(.black)
+                }.cornerRadius(15)
+        
+            }
+            .navigationTitle("About Us!")
+        }
     }
 }
 
