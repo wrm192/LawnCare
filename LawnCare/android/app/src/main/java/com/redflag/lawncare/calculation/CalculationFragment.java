@@ -25,26 +25,31 @@ public class CalculationFragment extends Fragment {
                 container, false);
 
 
+        TextInputLayout areaInput = view.findViewById(R.id.area);
+        TextInputLayout obstructionInput = view.findViewById(R.id.obstruction);
+
         Button submit = view.findViewById(R.id.SubmitButton);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextInputLayout area_TIL = view.findViewById(R.id.area);
-                TextInputLayout obstruction_TIL = view.findViewById(R.id.obstruction);
+                EditText editArea = areaInput.getEditText();
+                EditText editObstruction = obstructionInput.getEditText();
 
-                double area = Double.parseDouble(area_TIL.getEditText().getText().toString());
-                double obstruction = Double.parseDouble(obstruction_TIL.getEditText().getText().toString());
 
-                /*error = checkForError(area, false);
-                error = checkForError(obstruction, error);*/
+                boolean error = false;
+                error = checkForError(editArea, error);
+                error = checkForError(editObstruction, error);
 
-                /*if (!error) {
 
-                    clearError(area);
-                    clearError(obstruction);
-                }*/
 
-               newCalc(area,obstruction);
+                if (!error) {
+                    clearError(editArea);
+                    clearError(editObstruction);
+                }
+
+                double area = Double.parseDouble(editArea.getText().toString());
+                double obstruction = Double.parseDouble((editObstruction.getText().toString()));
+                newCalc(area,obstruction);
 
             }
         });
