@@ -1,10 +1,2 @@
-//
-//  Localizable.strings
-//  ezmow
-//
-//  Created by Ryan Moore on 2020-10-21.
-//
+"welcome"="Welcome_FR";
 
-import Foundation
-
-welcome="Welcome"
