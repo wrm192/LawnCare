@@ -1,6 +1,6 @@
 package com.redflag.project.country;
 
-import com.redflag.project.common.constants.ApiConstants;
+import com.redflag.project.common.constants.AppConstants;
 import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(ApiConstants.API_BASE  + "countries")
+@RequestMapping(AppConstants.API_BASE  + "countries")
 public class CountryController {
 
     CountryService countryService;

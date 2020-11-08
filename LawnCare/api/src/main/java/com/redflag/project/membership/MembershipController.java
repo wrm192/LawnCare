@@ -1,6 +1,6 @@
 package com.redflag.project.membership;
 
-import com.redflag.project.common.constants.ApiConstants;
+import com.redflag.project.common.constants.AppConstants;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(ApiConstants.API_BASE + "membership")
+@RequestMapping(AppConstants.API_BASE + "membership")
 public class MembershipController {
 
     MembershipService membershipService;

@@ -1,13 +1,13 @@
 package com.redflag.project.calculation;
 
-import com.redflag.project.common.constants.ApiConstants;
+import com.redflag.project.common.constants.AppConstants;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(ApiConstants.API_BASE + "calculations")
+@RequestMapping(AppConstants.API_BASE + "calculations")
 public class CalculationController {
 
     public CalculationService calculationService;
