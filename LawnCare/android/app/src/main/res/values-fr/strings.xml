@@ -28,6 +28,7 @@
     <string name="err_must_be_email">Le courriel entré n’est pas valide. john123@email.com</string>
     <string name="sent_consultation">Demande envoyée</string>
     <string name="sent_contact">Enquête envoyée</string>
+    <string name="attempting_to_contact">Vous serez informé si le contact est passé momentanément avec un toast en bas de l\'écran</string>
     <string name="home_title">À Propos de Nous</string>
     <string name="home_text">EZMow est l\'entretien des pelouses, mais rendu facile. Vous pouvez réserver un service avec nous, et aussi avoir un robot qui tond votre pelouse. Veuillez utiliser le &lt;&lt; Nous Contacterons!&gt;&gt; page pour toutes les questions! *Un superviseur sera sur la site.*</string>
     <string name="perf_contact_choice">Méthode de contact préférée:</string>

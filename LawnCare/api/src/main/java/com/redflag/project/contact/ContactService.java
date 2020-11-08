@@ -19,6 +19,7 @@ public class ContactService {
     }
 
     public void sendEmail(ContactRequest request) {
+        System.out.println(request);
         this.service.sendSimpleMessage(CONTACT_US_SUBJECT, this.buildRequest(request));
     }
 

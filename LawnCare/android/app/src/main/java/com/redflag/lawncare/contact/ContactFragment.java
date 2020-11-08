@@ -20,10 +20,13 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
 import com.redflag.lawncare.R;
+import com.redflag.lawncare.common.api.ContactNowApiService;
+import com.redflag.lawncare.common.api.dto.ContactNowRequest;
+import com.redflag.lawncare.common.api.dto.UpdateFragment;
 import com.redflag.lawncare.common.email.EmailBuilder;
 import com.redflag.lawncare.common.recaptcha.VerificationService;
 
-public class ContactFragment extends Fragment {
+public class ContactFragment extends Fragment implements UpdateFragment {
 
     private boolean preferEmail = true;
 
@@ -73,39 +76,32 @@ public class ContactFragment extends Fragment {
                     clearError(phoneNumb);
                     clearError(email);
 
-                    new VerificationService(new OnSuccessListener<SafetyNetApi.RecaptchaTokenResponse>() {
-                        @Override
-                        public void onSuccess(SafetyNetApi.RecaptchaTokenResponse response) {
-                            // Indicates communication with reCAPTCHA service was
-                            // successful.
-                            String userResponseToken = response.getTokenResult();
-                            EmailBuilder.buildEmail("Contact Us - " + name.getText().toString(),
-                                    "Name: " + name.getText().toString() + "\nPhone: " + phoneNumb.getText().toString() + "\nEmail: " + email.getText().toString() +
-                                            "\nPreferred Method of contact: " + ((preferEmail) ? "Email": "Phone") + "\n\nInquiry:\n" + inquiry);
-                            Toast.makeText(getContext(), getResources().getString(R.string.sent_contact), Toast.LENGTH_SHORT).show();
-                            name.setText("");
-                            phoneNumb.setText("");
-                            email.setText("");
-                            inquiryInput.setText("");
+                    new VerificationService(response -> {
+                        // Indicates communication with reCAPTCHA service was
+                        // successful.
+                        String userResponseToken = response.getTokenResult();
+                        ContactNowRequest request = new ContactNowRequest();
+                        request.setName(name.getText().toString());
+                        request.setComment(inquiryInput.getText().toString());
+                        request.setContactDetails((preferEmail) ? email.getText().toString(): phoneNumb.getText().toString());
+                        ContactNowApiService contactNowApiService = new ContactNowApiService(ContactFragment.this, request);
+                        contactNowApiService.execute();
+                        Toast.makeText(getContext(), getResources().getString(R.string.attempting_to_contact), Toast.LENGTH_LONG).show();
+                        name.setText("");
+                        phoneNumb.setText("");
+                        email.setText("");
+                        inquiryInput.setText("");
 
-                            if (!userResponseToken.isEmpty()) {
-                                // Validate the user response token using the
-                                // reCAPTCHA siteverify API.
-                            }
-                        }
-                    }, new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            if (e instanceof ApiException) {
-                                // An error occurred when communicating with the
-                                // reCAPTCHA service. Refer to the status code to
-                                // handle the error appropriately.
-                                ApiException apiException = (ApiException) e;
-                                int statusCode = apiException.getStatusCode();
+                    }, e -> {
+                        if (e instanceof ApiException) {
+                            // An error occurred when communicating with the
+                            // reCAPTCHA service. Refer to the status code to
+                            // handle the error appropriately.
+                            ApiException apiException = (ApiException) e;
+                            int statusCode = apiException.getStatusCode();
 
-                            } else {
-                                // A different, unknown type of error occurred.
-                            }
+                        } else {
+                            // A different, unknown type of error occurred.
                         }
                     }, ContactFragment.this );
 
@@ -124,17 +120,14 @@ public class ContactFragment extends Fragment {
         // Is the button now checked?
         RadioGroup radioGroup = (RadioGroup) view.findViewById(R.id.pref_group);
 
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
-        {
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch(checkedId) {
-                    case R.id.pref_email:
-                        preferEmail = true;
-                        break;
-                    case R.id.pref_phone:
-                        preferEmail = false;
-                        break;
-                }
+        radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
+            switch(checkedId) {
+                case R.id.pref_email:
+                    preferEmail = true;
+                    break;
+                case R.id.pref_phone:
+                    preferEmail = false;
+                    break;
             }
         });
 
@@ -172,5 +165,10 @@ public class ContactFragment extends Fragment {
             return true;
         }
         return errorState;
+    }
+
+    @Override
+    public void updateFragment() {
+        getActivity().runOnUiThread(() -> Toast.makeText(getContext(), getResources().getString(R.string.sent_contact), Toast.LENGTH_LONG).show());
     }
 }

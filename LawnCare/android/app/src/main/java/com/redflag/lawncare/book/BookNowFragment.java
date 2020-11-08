@@ -13,15 +13,15 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.safetynet.SafetyNetApi;
 import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
 import com.redflag.lawncare.R;
-import com.redflag.lawncare.common.email.EmailBuilder;
+import com.redflag.lawncare.common.api.BookNowApiService;
+import com.redflag.lawncare.common.api.dto.BookNowRequest;
+import com.redflag.lawncare.common.api.dto.UpdateFragment;
 import com.redflag.lawncare.common.recaptcha.VerificationService;
 
-public class BookNowFragment extends Fragment {
+public class BookNowFragment extends Fragment implements UpdateFragment {
 
 
     @Nullable
@@ -56,20 +56,18 @@ public class BookNowFragment extends Fragment {
                     clearError(name);
                     clearError(phoneNumber);
 
-                    new VerificationService(new OnSuccessListener<SafetyNetApi.RecaptchaTokenResponse>() {
-                        @Override
-                        public void onSuccess(SafetyNetApi.RecaptchaTokenResponse response) {
-                            // Indicates communication with reCAPTCHA service was
-                            // successful.
-                            EmailBuilder.buildEmail("Consultation - " + name.getText().toString(),
-                                    name.getText().toString() + " is looking for a consultation \ndetails:\nPhone number: "
-                                            + phoneNumber.getText().toString() + "\nAddress: " + address.getText().toString());
-
-                            Toast.makeText(getContext(), getResources().getString(R.string.sent_consultation), Toast.LENGTH_LONG).show();
-                            address.setText("");
-                            name.setText("");
-                            phoneNumber.setText("");
-                        }
+                    new VerificationService(response -> {
+                        // Indicates communication with reCAPTCHA service was
+                        // successful.
+                        BookNowRequest bookNowRequest = new BookNowRequest();
+                        bookNowRequest.setAddress(address.getText().toString());
+                        bookNowRequest.setName(name.getText().toString());
+                        bookNowRequest.setPhoneNumber(phoneNumber.getText().toString());
+                        Toast.makeText(getContext(), getResources().getString(R.string.attempting_to_contact), Toast.LENGTH_LONG).show();
+                        sendEmail(bookNowRequest);
+                        address.setText("");
+                        name.setText("");
+                        phoneNumber.setText("");
                     }, new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
@@ -105,6 +103,11 @@ public class BookNowFragment extends Fragment {
         text.setError(null);
     }
 
+    private void sendEmail(BookNowRequest request) {
+        BookNowApiService bookNowApiService = new BookNowApiService(this, request);
+        bookNowApiService.execute();
+    }
+
     private boolean validatePhoneNumber(EditText phone, boolean errorState) {
         if(!android.util.Patterns.PHONE.matcher(phone.getText().toString()).matches()){
             phone.setError(getString(R.string.err_must_be_phone));
@@ -113,5 +116,8 @@ public class BookNowFragment extends Fragment {
         return errorState;
     }
 
-
+    @Override
+    public void updateFragment() {
+        getActivity().runOnUiThread(() -> Toast.makeText(getContext(), getResources().getString(R.string.sent_consultation), Toast.LENGTH_LONG).show());
+    }
 }
