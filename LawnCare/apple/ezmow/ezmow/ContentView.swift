@@ -19,14 +19,14 @@ struct ContentView: View {
             HomeView()
                 .tabItem {
                     Image(systemName: "house.fill")
-                    Text("HOME")
+                    Text(NSLocalizedString("home", comment: ""))
                 }.tag(0)
                 .highPriorityGesture(DragGesture().onEnded(
                     { self.handleSwipe(translation: $0.translation.width) }))
             Consult()
                 .tabItem {
                     Image(systemName: "book.fill")
-                    Text("CONSULT")
+                    Text(NSLocalizedString("consult", comment: ""))
                 }.tag(1)
                 .highPriorityGesture(DragGesture().onEnded({
                                  self.handleSwipe(translation: $0.translation.width)
@@ -34,7 +34,7 @@ struct ContentView: View {
             FAQ()
                 .tabItem {
                     Image(systemName: "star.fill")
-                    Text("FAQ")
+                    Text(NSLocalizedString("faq", comment: ""))
                 }.tag(2)
                 .highPriorityGesture(DragGesture().onEnded({
                                  self.handleSwipe(translation: $0.translation.width)
@@ -42,7 +42,7 @@ struct ContentView: View {
             Contact()
                 .tabItem {
                     Image(systemName: "person.fill")
-                    Text("CONTACT")
+                    Text(NSLocalizedString("contact", comment: ""))
                 }.tag(3)
                 .highPriorityGesture(DragGesture().onEnded({
                                  self.handleSwipe(translation: $0.translation.width)
@@ -50,7 +50,7 @@ struct ContentView: View {
             Quote()
                 .tabItem {
                     Image(systemName: "square.and.pencil")
-                    Text("QUOTE")
+                    Text(NSLocalizedString("quote", comment: ""))
                 }
                 .tag(4)
                 .highPriorityGesture(DragGesture().onEnded({

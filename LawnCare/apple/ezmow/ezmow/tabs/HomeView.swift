@@ -13,7 +13,7 @@ struct HomeView: View {
         
         NavigationView{
             Form {
-                Section (header: Text("\nEZMow is lawn care made easy, booka service with us and have a lawn mowing robot come to your door steps to take care of the rest! Use the contact us form for any inquiries. \n\n **Employee supervisor will be on site")) {}
+                Section (header: Text(NSLocalizedString("homeMessage", comment: ""))) {}
                 
                 Image("Logo")
                     .resizable()
@@ -21,7 +21,6 @@ struct HomeView: View {
         
             }
             .navigationTitle("About Us!")
-
         }
 
     }
