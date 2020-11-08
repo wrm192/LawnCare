@@ -3,4 +3,9 @@
 "home"="HOME_FR";
 "contact"="CONTACT_FR";
 "quote"="QUOTE_FR";
-"homeMessage"="\nEZMow is lawn care made easy, booka service with us and have a lawn mowing robot come to your door steps to take care of the rest! Use the contact us form for any inquiries. \n\n **Employee supervisor will be on site";
+"homeMessage"="\nEZMow is lawn care made easy, booka service with us and have a lawn mowing robot come to your door steps to take care of the rest! Use the contact us form for any inquiries. \n\n **Employee supervisor will be on site_FR";
+
+"consultName"="Name_FR";
+"consultAddress"="Address_FR";
+"consultPhoneNumber"="Phone Number_FR";
+"consultBookNowButton"="Book Now!_FR";
