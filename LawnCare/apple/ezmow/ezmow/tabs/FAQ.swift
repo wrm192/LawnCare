@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FAQ: View {
     var body: some View {
-        Text("FAQ")
+        Text(NSLocalizedString("faq", comment: ""))
     }
 }
 
