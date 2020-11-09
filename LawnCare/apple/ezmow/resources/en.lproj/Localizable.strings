@@ -9,3 +9,9 @@
 "consultAddress"="Address";
 "consultPhoneNumber"="Phone Number";
 "consultBookNowButton"="Book Now!";
+
+"quoteArea"="Area";
+"quoteObstructions"="Obstructions";
+"quoteGetQuoteButton"="Get Quote";
+
+
