@@ -9,6 +9,7 @@
 "consultAddress"="Address";
 "consultPhoneNumber"="Phone Number";
 "consultBookNowButton"="Book Now!";
+
 "question1" = "Question 1";
 "question2" = "Question 2";
 "question3" = "Question 3";
@@ -17,3 +18,7 @@
 "answer2" = "Answer 2";
 "answer3" = "Answer 3";
 "answer4" = "Answer 4";
+
+"quoteArea"="Area";
+"quoteObstructions"="Obstructions";
+"quoteGetQuoteButton"="Get Quote";

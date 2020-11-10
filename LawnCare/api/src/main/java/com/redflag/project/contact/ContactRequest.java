@@ -5,8 +5,6 @@ public class ContactRequest {
     String name;
     String contactDetails;
     String comment;
-    boolean wantsEmail; // if true, contact details should be an email or phone number if false
-    // TODO validate that ^
 
 
     public String getName() {
@@ -33,21 +31,12 @@ public class ContactRequest {
         this.comment = comment;
     }
 
-    public boolean isWantsEmail() {
-        return wantsEmail;
-    }
-
-    public void setWantsEmail(boolean wantsEmail) {
-        this.wantsEmail = wantsEmail;
-    }
-
     @Override
     public String toString() {
         return "ContactRequest{" +
                 "name='" + name + '\'' +
                 ", contactDetails='" + contactDetails + '\'' +
                 ", comment='" + comment + '\'' +
-                ", wantsEmail=" + wantsEmail +
                 '}';
     }
 }
