@@ -37,5 +37,13 @@
     <string name="calculation_title">Prix estimé</string>
     <string name="area">Zone</string>
     <string name="obstruction">Obstructions</string>
-
+    <string name="quote_lawn_size">Je connais la taille de la pelouse</string>
+    <string name="quote">citation</string>
+    <string name="quote_sq_ft">Pieds carrés</string>
+    <string name="quote_select">Sélectionnez une image similaire</string>
+    <string name="quote_add_obstruction">Ajouter une Obstruction</string>
+    <string name="quote_reset">RÉINITIALISER</string>
+    <string name="quote_submit">SOUMETTRE</string>
+    <string name="quote_qty">Qté</string>
+    <string name="quote_copy">Copier les informations</string>
 </resources>

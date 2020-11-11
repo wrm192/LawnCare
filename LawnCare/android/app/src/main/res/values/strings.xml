@@ -37,7 +37,15 @@
     <string name="calculation_title">Estimated Price</string>
     <string name="area">Area</string>
     <string name="obstruction">Obstructions</string>
-
+    <string name="quote">QUOTE</string>
+    <string name="quote_lawn_size">I know lawn size</string>
+    <string name="quote_sq_ft">Sq ft</string>
+    <string name="quote_select">Select a similar picture</string>
+    <string name="quote_add_obstruction">Add Obstruction</string>
+    <string name="quote_reset">RESET</string>
+    <string name="quote_submit">SUBMIT</string>
+    <string name="quote_qty">Qty</string>
+    <string name="quote_copy">Copy information</string>
 
 
 
