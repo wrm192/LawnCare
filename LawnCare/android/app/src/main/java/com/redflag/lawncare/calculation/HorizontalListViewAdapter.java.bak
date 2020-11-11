@@ -1,0 +1,262 @@
+package com.redflag.lawncare.calculation;
+
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.os.Build;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.RequiresApi;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.redflag.lawncare.R;
+
+import java.util.List;
+import java.util.Objects;
+
+public class HorizontalListViewAdapter extends BaseAdapter implements View.OnTouchListener, View.OnFocusChangeListener, View.OnClickListener, View.OnLongClickListener {
+    private List<Obstruction> mobstruction;
+    private Context mContext;
+    private LayoutInflater mInflater;
+    private int selectIndex = -1;
+    private int selectedEditTextPosition = -1;
+
+    public HorizontalListViewAdapter(Context context, List<Obstruction> obstruction) {
+        this.mContext = context;
+        this.mobstruction = obstruction;
+        mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);//LayoutInflater.from(mContext);
+    }
+    public void newObstruction(){
+        Obstruction obs = new Obstruction("Tree","Qty",0);
+        this.mobstruction.add(obs);
+    }
+    @Override
+    public int getCount() {
+        return mobstruction.size();
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return position;
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder holder;
+        if (convertView == null) {
+            //convertView = LayoutInflater.from(mContext).inflate(R.layout.item_add, null);
+            convertView = mInflater.inflate(R.layout.item_add, null);
+            holder = new ViewHolder();
+
+            holder.spinner3 = (Spinner) convertView.findViewById(R.id.spinner3);
+            holder.editText2 = (EditText) convertView.findViewById(R.id.editText2);
+            holder.textView3 = (TextView) convertView.findViewById(R.id.textView3);
+            holder.floatingActionButton = (FloatingActionButton) convertView.findViewById(R.id.floatingActionButton);
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
+        }
+
+        if (position == selectIndex) {
+            convertView.setSelected(true);
+        } else {
+            convertView.setSelected(false);
+        }
+
+        final String[] spinnerItems = {"Tree","Swimming pool","Other"};
+        final String[] spinnerItems_child = {"Qty","Sq ft","Sq ft"};
+        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(this.mContext,android.R.layout.simple_spinner_item, spinnerItems);
+        System.out.println(position);
+        System.out.println(mobstruction.get(position).getPersonName());
+        System.out.println(mobstruction.get(position).getPersonAddress());
+        System.out.println(mobstruction.get(position).getPersonNumb());
+
+        holder.spinner3.setAdapter(spinnerAdapter);
+
+        holder.editText2.setOnTouchListener(this);
+        holder.editText2.setOnFocusChangeListener(this);
+        holder.editText2.setTag(position);
+        holder.editText2.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                holder.editText2.setTextIsSelectable(true);
+                return false;
+            }
+        });
+
+        holder.editText2.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v,
+                                      boolean hasFocus) {
+                if (v instanceof EditText)
+                    if (hasFocus) {
+                        InputMethodManager imm = (InputMethodManager) mContext.getSystemService(Context.INPUT_METHOD_SERVICE);
+                        assert imm != null;
+                        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,
+                                InputMethodManager.HIDE_IMPLICIT_ONLY);
+                    }
+            }
+        });
+
+        if (selectedEditTextPosition != -1 && position == selectedEditTextPosition) { // 保证每个时刻只有一个EditText能获取到焦点
+            holder.editText2.requestFocus();
+        } else {
+            holder.editText2.clearFocus();
+        }
+
+
+        for(int i=0;i<spinnerItems.length;i++){
+            if(spinnerItems[i].equals(mobstruction.get(position).getPersonName())){
+                holder.spinner3.setSelection(i,true);
+                break;
+            }
+        }
+
+        holder.textView3.setText(mobstruction.get(position).getPersonAddress());
+        holder.editText2.setText(String.valueOf(mobstruction.get(position).getPersonNumb()));
+        holder.editText2.setSelection(holder.editText2.length());
+        convertView.setTag(R.id.item_root, position);
+
+        holder.floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println(position);
+                mobstruction.remove(position);
+                notifyDataSetChanged();
+
+            }
+        });
+        holder.spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                if (Objects.equals(spinnerAdapter.getItem(i), "Tree")){
+                    holder.textView3.setText(spinnerItems_child[0]);
+
+                    mobstruction.get(position).setPersonName(spinnerItems[0]);
+                    mobstruction.get(position).setPersonAddress(spinnerItems_child[0]);
+                    double dataDB = Double.parseDouble(holder.editText2.getText().toString());
+                    mobstruction.get(position).setPersonNumb(dataDB);
+
+
+                }else if(Objects.equals(spinnerAdapter.getItem(i), "Swimming pool")){
+                    holder.textView3.setText(spinnerItems_child[1]);
+                    mobstruction.get(position).setPersonName(spinnerItems[1]);
+                    mobstruction.get(position).setPersonAddress(spinnerItems_child[1]);
+                    double dataDB = Double.parseDouble(holder.editText2.getText().toString());
+                    mobstruction.get(position).setPersonNumb(dataDB);
+
+                }else if(Objects.equals(spinnerAdapter.getItem(i), "Other")){
+                    holder.textView3.setText(spinnerItems_child[2]);
+                    mobstruction.get(position).setPersonName(spinnerItems[2]);
+                    mobstruction.get(position).setPersonAddress(spinnerItems_child[2]);
+                    double dataDB = Double.parseDouble(holder.editText2.getText().toString());
+                    mobstruction.get(position).setPersonNumb(dataDB);
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
+        convertView.setOnClickListener(this);
+        convertView.setOnLongClickListener(this);
+
+        return convertView;
+    }
+
+
+    @Override
+    public boolean onTouch(View view, MotionEvent motionEvent) {
+        if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
+            EditText editText = (EditText) view;
+            selectedEditTextPosition = (int) editText.getTag();
+        }
+            return false;
+
+    }
+
+    private TextWatcher mTextWatcher = new MyTextWatcher() {
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            if (selectedEditTextPosition != -1) {
+                Log.w("MyEditAdapter", "onTextPosiotion " + selectedEditTextPosition);
+                Obstruction itemTest = (Obstruction) getItem(selectedEditTextPosition);
+                double dataDB = Double.parseDouble(s.toString());
+                itemTest.setPersonNumb(dataDB);
+            }
+        }
+    };
+
+
+    @Override
+    public void onFocusChange(View view, boolean b) {
+        EditText editText = (EditText) view;
+        if (b) {
+            editText.addTextChangedListener(mTextWatcher);
+        } else {
+            editText.removeTextChangedListener(mTextWatcher);
+        }
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view.getId() == R.id.item_root) {
+            int position = (int) view.getTag(R.id.item_root);
+            Toast.makeText(mContext, "点击第 " + position + " 个item", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public boolean onLongClick(View view) {
+        if (view.getId() == R.id.item_root) {
+            int position = (int) view.getTag(R.id.item_root);
+            Toast.makeText(mContext, "长按第 " + position + " 个item", Toast.LENGTH_SHORT).show();
+        }
+        return true;
+    }
+
+    private static class ViewHolder {
+        private Spinner spinner3;
+        private EditText editText2;
+        private TextView textView3;
+        private FloatingActionButton floatingActionButton;
+
+
+    }
+
+
+    public void setSelectIndex(int i) {
+        selectIndex = i;
+    }
+
+}
+
+class MyTextWatcher implements TextWatcher {
+    @Override public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
+    @Override public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
+    @Override public void afterTextChanged(Editable editable) { } }

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_root"
+    android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                android:background="#fff"
+                    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_margin="10px"
+            android:clickable="true"
+            android:longClickable="false"
+            android:tint="#FFFFFF"
+            app:fabSize="mini"
+            app:maxImageSize="40px"
+            app:rippleColor="#FFFFFF"
+            app:srcCompat="@android:drawable/bottom_bar" />
+
+        <Spinner
+            android:id="@+id/spinner3"
+            android:layout_width="158dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10px"
+            android:layout_weight="1"
+
+            android:background="@drawable/round_edge_radius_tv_bl" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="29dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10px"
+            android:layout_weight="1"
+            android:background="@drawable/edit_bg"
+            android:baselineAligned="false"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:descendantFocusability="beforeDescendants"
+            android:textAlignment="textStart"
+            android:typeface="normal"  />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="20px"
+            android:layout_weight="1"
+            android:text="@string/quote_qty"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</RelativeLayout>
