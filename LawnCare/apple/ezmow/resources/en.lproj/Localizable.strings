@@ -10,6 +10,12 @@
 "consultPhoneNumber"="Phone Number";
 "consultBookNowButton"="Book Now!";
 
+"contactName"="Name";
+"contactAddress"="Email Address";
+"contactPhoneNumber"="Phone Number";
+"contactMethod"="Preferred Contact Method";
+"contactSubmitButton"="Submit";
+
 "question1" = "Question 1";
 "question2" = "Question 2";
 "question3" = "Question 3";
@@ -22,3 +28,4 @@
 "quoteArea"="Area";
 "quoteObstructions"="Obstructions";
 "quoteGetQuoteButton"="Get Quote";
+
