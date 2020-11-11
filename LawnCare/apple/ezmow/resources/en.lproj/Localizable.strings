@@ -9,3 +9,9 @@
 "consultAddress"="Address";
 "consultPhoneNumber"="Phone Number";
 "consultBookNowButton"="Book Now!";
+
+"contactName"="Name";
+"contactAddress"="Email Address";
+"contactPhoneNumber"="Phone Number";
+"contactMethod"="Preferred Contact Method";
+"contactSubmitButton"="Submit";
