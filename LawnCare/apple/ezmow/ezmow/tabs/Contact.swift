@@ -7,11 +7,13 @@
 //
 import SwiftUI
 import UIKit
+import Combine
 
 struct Contact: View {
     @State var name = ""
     @State var phoneNumb = ""
     @State var email = ""
+    @State var text = "";
 
     var body: some View {
         
@@ -44,6 +46,13 @@ struct Contact: View {
                     }
                  }
                 
+                Section (
+                    
+                    header: Text(NSLocalizedString("contactQuestion", comment: ""))) {
+                    MultilineTextView(text: "")
+                                
+                }
+                
                 Section {
                     Button(action : {buttonAction()},
                            label: {
@@ -52,6 +61,8 @@ struct Contact: View {
                             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
                     })
                 }
+                
+               
             }
             .navigationBarTitle(NSLocalizedString("contact", comment: ""))
         }
@@ -60,6 +71,24 @@ struct Contact: View {
     
     func buttonAction() {
         print("Submitted")
+    }
+}
+
+
+
+struct MultilineTextView: UIViewRepresentable {
+    var text: String
+
+    func makeUIView(context: Context) -> UITextView {
+        let view = UITextView()
+        view.isScrollEnabled = true
+        view.isEditable = true
+        view.isUserInteractionEnabled = true
+        return view
+    }
+
+    func updateUIView(_ uiView: UITextView, context: Context) {
+        uiView.text = text
     }
 }
 
