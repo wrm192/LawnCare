@@ -30,6 +30,5 @@ public class BookNowService {
         stringBuilder.append("Please contact them using this phone number: ").append(bookNowRequest.getPhoneNumber());
 
         return stringBuilder.toString();
-
     }
 }

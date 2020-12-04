@@ -21,7 +21,7 @@ public class BookNowRequest implements RequestSetter {
     }
 
     public void setAddress(String address) {
-        address = address;
+        this.address = address;
     }
 
     public String getPhoneNumber() {
