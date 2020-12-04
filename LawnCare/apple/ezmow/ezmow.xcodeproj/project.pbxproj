@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,11 @@
 		0C0F0258252FB45200542851 /* FAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0F0257252FB45200542851 /* FAQ.swift */; };
 		0C0F025D252FB47800542851 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0F025C252FB47800542851 /* Contact.swift */; };
 		0C0F0262252FB49D00542851 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0F0261252FB49D00542851 /* Quote.swift */; };
+		4781FA98257AC1510052B9D2 /* apiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4781FA97257AC1510052B9D2 /* apiRequest.swift */; };
+		4781FA9D257AC7DA0052B9D2 /* emailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4781FA9C257AC7DA0052B9D2 /* emailRequest.swift */; };
+		4781FAA5257AD5930052B9D2 /* ContactRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4781FAA4257AD5930052B9D2 /* ContactRequest.swift */; };
+		4781FAAA257AD91E0052B9D2 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4781FAA9257AD91E0052B9D2 /* PopupView.swift */; };
+		4781FAB0257ADCBE0052B9D2 /* ToastUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4781FAAF257ADCBE0052B9D2 /* ToastUI */; };
 		47A27E5D252A2AC4006440D9 /* ezmowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A27E5C252A2AC4006440D9 /* ezmowApp.swift */; };
 		47A27E5F252A2AC4006440D9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A27E5E252A2AC4006440D9 /* ContentView.swift */; };
 		47A27E61252A2AC4006440D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47A27E60252A2AC4006440D9 /* Assets.xcassets */; };
@@ -46,6 +51,10 @@
 		0C0F0257252FB45200542851 /* FAQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQ.swift; sourceTree = "<group>"; };
 		0C0F025C252FB47800542851 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		0C0F0261252FB49D00542851 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		4781FA97257AC1510052B9D2 /* apiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiRequest.swift; sourceTree = "<group>"; };
+		4781FA9C257AC7DA0052B9D2 /* emailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emailRequest.swift; sourceTree = "<group>"; };
+		4781FAA4257AD5930052B9D2 /* ContactRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRequest.swift; sourceTree = "<group>"; };
+		4781FAA9257AD91E0052B9D2 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 		47A27E59252A2AC4006440D9 /* ezmow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ezmow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47A27E5C252A2AC4006440D9 /* ezmowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ezmowApp.swift; sourceTree = "<group>"; };
 		47A27E5E252A2AC4006440D9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4781FAB0257ADCBE0052B9D2 /* ToastUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +129,10 @@
 				47A27E60252A2AC4006440D9 /* Assets.xcassets */,
 				47A27E65252A2AC4006440D9 /* Info.plist */,
 				47A27E62252A2AC4006440D9 /* Preview Content */,
+				4781FA97257AC1510052B9D2 /* apiRequest.swift */,
+				4781FA9C257AC7DA0052B9D2 /* emailRequest.swift */,
+				4781FAA4257AD5930052B9D2 /* ContactRequest.swift */,
+				4781FAA9257AD91E0052B9D2 /* PopupView.swift */,
 			);
 			path = ezmow;
 			sourceTree = "<group>";
@@ -202,6 +216,9 @@
 			dependencies = (
 			);
 			name = ezmow;
+			packageProductDependencies = (
+				4781FAAF257ADCBE0052B9D2 /* ToastUI */,
+			);
 			productName = ezmow;
 			productReference = 47A27E59252A2AC4006440D9 /* ezmow.app */;
 			productType = "com.apple.product-type.application";
@@ -274,6 +291,9 @@
 				fr,
 			);
 			mainGroup = 47A27E50252A2AC4006440D9;
+			packageReferences = (
+				4781FAAE257ADCBE0052B9D2 /* XCRemoteSwiftPackageReference "ToastUI" */,
+			);
 			productRefGroup = 47A27E5A252A2AC4006440D9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -319,12 +339,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4781FAAA257AD91E0052B9D2 /* PopupView.swift in Sources */,
 				0C0F025D252FB47800542851 /* Contact.swift in Sources */,
 				0C0F0253252FB43600542851 /* Consult.swift in Sources */,
+				4781FAA5257AD5930052B9D2 /* ContactRequest.swift in Sources */,
 				0C0F024E252FB41E00542851 /* HomeView.swift in Sources */,
 				47A27E5F252A2AC4006440D9 /* ContentView.swift in Sources */,
 				0C0F0258252FB45200542851 /* FAQ.swift in Sources */,
+				4781FA9D257AC7DA0052B9D2 /* emailRequest.swift in Sources */,
 				0C0F0262252FB49D00542851 /* Quote.swift in Sources */,
+				4781FA98257AC1510052B9D2 /* apiRequest.swift in Sources */,
 				47A27E5D252A2AC4006440D9 /* ezmowApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -660,6 +684,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4781FAAE257ADCBE0052B9D2 /* XCRemoteSwiftPackageReference "ToastUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/quanshousio/ToastUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4781FAAF257ADCBE0052B9D2 /* ToastUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4781FAAE257ADCBE0052B9D2 /* XCRemoteSwiftPackageReference "ToastUI" */;
+			productName = ToastUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 47A27E51252A2AC4006440D9 /* Project object */;
 }

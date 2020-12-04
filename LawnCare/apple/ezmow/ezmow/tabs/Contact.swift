@@ -8,13 +8,15 @@
 import SwiftUI
 import UIKit
 import Combine
+import ToastUI
 
 struct Contact: View {
     @State var name = ""
     @State var phoneNumb = ""
     @State var email = ""
     @State var text = "";
-
+    @State private var presentingToast: Bool = false
+    var apiRequest = ApiRequest()
     var body: some View {
         
         NavigationView{
@@ -58,10 +60,17 @@ struct Contact: View {
                            label: {
                             Text(NSLocalizedString("contactSubmitButton", comment: ""))
                             .bold().foregroundColor(.blue)
-                            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
-                    })
-                }
-                
+                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+                               
+                           }
+                    )
+                    
+                }.toast(isPresented: $presentingToast, dismissAfter: 2.0) {
+                    print("Toast dismissed")
+                  } content: {
+                    ToastView("Sending Contact Request")
+                      .toastViewStyle(IndefiniteProgressToastViewStyle())
+                  }
                
             }
             .navigationBarTitle(NSLocalizedString("contact", comment: ""))
@@ -70,6 +79,9 @@ struct Contact: View {
     }
     
     func buttonAction() {
+        presentingToast = true;
+        
+        apiRequest.postContact(contactRequest: ContactRequest(name: name, comment: text, contactDetails: email), path: "contact")
         print("Submitted")
     }
 }
