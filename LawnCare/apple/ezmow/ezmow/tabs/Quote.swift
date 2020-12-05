@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import ToastUI
 
 struct Quote: View {
     @State var area = ""
     @State var obstructions = ""
+    @State private var presentingToast: Bool = false
+    var apiRequest = ApiRequest()
     
     var body: some View {
         
@@ -35,7 +38,12 @@ struct Quote: View {
                         Text(NSLocalizedString("quoteGetQuoteButton", comment: "")).bold().foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
                     })
-                }
+                }.toast(isPresented: $presentingToast, dismissAfter: 2.0) {
+                    print("Toast dismissed")
+                  } content: {
+                    ToastView(NSLocalizedString("quoteAPIToast", comment: ""))
+                      .toastViewStyle(IndefiniteProgressToastViewStyle())
+                  }
         
             }
             .navigationBarTitle(NSLocalizedString("quote", comment: ""))
@@ -45,11 +53,16 @@ struct Quote: View {
     }
     
     func buttonAction() {
-        print("consult button pushed");
+        //print("consult button pushed");
         
         if (area == "" || obstructions == "") {
             print("empty");
         }
+        
+        presentingToast = true;
+        
+        apiRequest.postQuote(quoteRequest: quoteRequest(area: area, obstruction: obstructions), path: "quote")
+        print("Submitted")
     }
 }
 

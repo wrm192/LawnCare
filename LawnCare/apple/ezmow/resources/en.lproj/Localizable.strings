@@ -32,5 +32,6 @@
 "quoteArea"="Area";
 "quoteObstructions"="Obstructions";
 "quoteGetQuoteButton"="Get Quote";
+"quoteAPIToast"="Sending Quote Request";
 
 
