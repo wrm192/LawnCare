@@ -44,6 +44,7 @@ struct Quote: View {
                     ToastView(NSLocalizedString("quoteAPIToast", comment: ""))
                       .toastViewStyle(IndefiniteProgressToastViewStyle())
                   }
+                .disabled(area.isEmpty || obstructions.isEmpty)
         
             }
             .navigationBarTitle(NSLocalizedString("quote", comment: ""))
