@@ -59,7 +59,7 @@ struct Consult: View {
         //print("consult button psuhed")
         presentingToast = true;
 
-        apiRequest.postConsult(consultRequest: ConsultRequest(name: name, phoneNumber: phoneNumb, address: address), path: "consult")
+        apiRequest.postConsult(consultRequest: ConsultRequest(name: name, phoneNumber: phoneNumb, address: address), path: "book-now")
         print("Submitted")
     }
 
