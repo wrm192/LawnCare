@@ -47,6 +47,8 @@ struct Consult: View {
                 ToastView(NSLocalizedString("consultAPIToast", comment: ""))
                   .toastViewStyle(IndefiniteProgressToastViewStyle())
               }
+              .disabled(name.isEmpty || phoneNumb.isEmpty || address.isEmpty)
+
       
           } .navigationBarTitle(NSLocalizedString("consult", comment: ""))
 
