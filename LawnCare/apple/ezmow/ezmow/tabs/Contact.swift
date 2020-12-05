@@ -14,7 +14,7 @@ struct Contact: View {
     @State var name = ""
     @State var phoneNumb = ""
     @State var email = ""
-    @State var text = "";
+    @State var textField = "";
     @State private var presentingToast: Bool = false
     var apiRequest = ApiRequest()
     var body: some View {
@@ -48,10 +48,10 @@ struct Contact: View {
                     }
                  }
                 
-                Section (
+                Section(
                     
                     header: Text(NSLocalizedString("contactQuestion", comment: ""))) {
-                    MultilineTextView(text: "")
+                    MultilineTextView(text: $textField)
                                 
                 }
                 
@@ -80,27 +80,69 @@ struct Contact: View {
     func buttonAction() {
         presentingToast = true;
         
-        apiRequest.postContact(contactRequest: ContactRequest(name: name, comment: text, contactDetails: email), path: "contact")
-        print("Submitted")
+        apiRequest.postContact(contactRequest: ContactRequest(name: name, comment: textField, contactDetails: email), path: "contact")
     }
 }
 
 
 
 struct MultilineTextView: UIViewRepresentable {
-    var text: String
+//    @Binding var text: String
+//
+//    func makeUIView(context: Context) -> UITextView {
+//        let view = UITextView()
+//        view.isScrollEnabled = true
+//        view.isEditable = true
+//        view.isUserInteractionEnabled = true
+//        text = view.text
+//        view.
+//        print("in make ui view")
+//        return view
+//    }
+//
+//    func updateUIView(_ uiView: UITextView, context: Context) {
+//        print("in update ui view")
+//        text = uiView.text
+//    }
+    @Binding var text: String
 
-    func makeUIView(context: Context) -> UITextView {
-        let view = UITextView()
-        view.isScrollEnabled = true
-        view.isEditable = true
-        view.isUserInteractionEnabled = true
-        return view
-    }
 
-    func updateUIView(_ uiView: UITextView, context: Context) {
-        uiView.text = text
-    }
+        func makeUIView(context: Context) -> UITextView {
+            let view = UITextView()
+            view.isScrollEnabled = true
+            view.isEditable = true
+            view.isUserInteractionEnabled = true
+            view.backgroundColor = UIColor.white
+            view.textColor = UIColor.black
+            view.font = UIFont.systemFont(ofSize: 17)
+            view.delegate = context.coordinator
+            return view
+        }
+
+        func updateUIView(_ uiView: UITextView, context: Context) {
+            uiView.text = text
+        }
+
+        func frame(numLines: CGFloat) -> some View {
+            let height = UIFont.systemFont(ofSize: 17).lineHeight * numLines
+            return self.frame(height: height)
+        }
+
+        func makeCoordinator() -> MultilineTextView.Coordinator {
+            Coordinator(self)
+        }
+
+        class Coordinator: NSObject, UITextViewDelegate {
+            var parent: MultilineTextView
+
+            init(_ parent: MultilineTextView) {
+                self.parent = parent
+            }
+
+            func textViewDidChange(_ textView: UITextView) {
+                parent.text = textView.text
+            }
+        }
 }
 
 struct RadioButtonField : View {

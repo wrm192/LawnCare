@@ -50,7 +50,7 @@ struct Quote: View {
             .navigationBarTitle(NSLocalizedString("quote", comment: ""))
 
         }
-        
+            
     }
     
     func buttonAction() {
