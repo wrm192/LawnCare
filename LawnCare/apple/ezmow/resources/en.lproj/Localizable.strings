@@ -9,6 +9,7 @@
 "consultAddress"="Address";
 "consultPhoneNumber"="Phone Number";
 "consultBookNowButton"="Book Now!";
+"consultAPIToast"="Sending Consult Request";
 
 "contactName"="Name";
 "contactAddress"="Email Address";
@@ -16,6 +17,8 @@
 "contactMethod"="Preferred Contact Method";
 "contactSubmitButton"="Submit";
 "contactQuestion"="Question/Comment";
+"contactAPIToast"="Sending Contact Request";
+
 
 "question1" = "Question 1";
 "question2" = "Question 2";
@@ -29,4 +32,5 @@
 "quoteArea"="Area";
 "quoteObstructions"="Obstructions";
 "quoteGetQuoteButton"="Get Quote";
+
 
