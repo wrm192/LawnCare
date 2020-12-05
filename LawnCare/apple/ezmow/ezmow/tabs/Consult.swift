@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import ToastUI
 
 struct Consult: View {
     @State var name = ""
-      @State var phoneNumb = ""
-      @State var address = ""
-      
+    @State var phoneNumb = ""
+    @State var address = ""
+    @State private var presentingToast: Bool = false
+    var apiRequest = ApiRequest()
       var body: some View {
         // If your keyboad doesn't show up, on the simulation select I/O -> Keyboard -> Connect hardware to device (or something like that) and restart your simulator.
         NavigationView {
@@ -37,7 +39,13 @@ struct Consult: View {
                   Button(action : {buttonAction()}, label: {
                       Text(NSLocalizedString("consultBookNowButton", comment: "")).bold().foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                           .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
-                  })
+                    }
+                  )
+              }.toast(isPresented: $presentingToast, dismissAfter: 2.0) {
+                print("Toast dismissed")
+              } content: {
+                ToastView(NSLocalizedString("consultAPIToast", comment: ""))
+                  .toastViewStyle(IndefiniteProgressToastViewStyle())
               }
       
           } .navigationBarTitle(NSLocalizedString("consult", comment: ""))
@@ -48,7 +56,11 @@ struct Consult: View {
       }
 
     func buttonAction() {
-        print("consult button psuhed")
+        //print("consult button psuhed")
+        presentingToast = true;
+
+        apiRequest.postConsult(consultRequest: ConsultRequest(name: name, phoneNumber: phoneNumb, address: address), path: "consult")
+        print("Submitted")
     }
 
 }

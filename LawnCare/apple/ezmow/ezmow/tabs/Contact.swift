@@ -68,12 +68,11 @@ struct Contact: View {
                 }.toast(isPresented: $presentingToast, dismissAfter: 2.0) {
                     print("Toast dismissed")
                   } content: {
-                    ToastView("Sending Contact Request")
+                    ToastView(NSLocalizedString("contactAPIToast", comment: ""))
                       .toastViewStyle(IndefiniteProgressToastViewStyle())
                   }
                
-            }
-            .navigationBarTitle(NSLocalizedString("contact", comment: ""))
+            }.navigationBarTitle(NSLocalizedString("contact", comment: ""))
         }
         
     }
