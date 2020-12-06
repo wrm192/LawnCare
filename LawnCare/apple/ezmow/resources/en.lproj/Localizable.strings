@@ -33,5 +33,4 @@
 "quoteObstructions"="Obstructions";
 "quoteGetQuoteButton"="Get Quote";
 "quoteAPIToast"="Sending Quote Request";
-
-
+"quoteCost"="Quote Cost";
