@@ -1,16 +1,24 @@
-"consult"="Commandez";
+"consult"="COMMANDEZ";
 "faq"="FAQ";
-"home"="Accueil";
-"contact"="Contacte";
-"quote"="Devis";
+"home"="ACCUEIL";
+"contact"="CONTACTE";
+"quote"="DEVIS";
 "homeMessage"="/nEZMow est l\'entretien des pelouses, mais rendu facile. Vous pouvez réserver un service avec nous, et aussi avoir un robot qui tond votre pelouse. Veuillez utiliser le &lt;&lt; Nous Contacterons!&gt;&gt; page pour toutes les questions! *Un superviseur sera sur la site.*";
 
 "consultName"="Nom";
 "consultAddress"="Adresse";
 "consultPhoneNumber"="Numéro de téléphone";
 "consultBookNowButton"="Placer une ordre!";
+"consultAPIToast"="Envoie d'un message consultation";
 
-"contactQuestion"="Question/Comment_FR";
+"contactName"="Nom";
+"contactAddress"="Email";
+"contactPhoneNumber"="Numéro de téléphone";
+"contactMethod"="Méthode de contacte préférée";
+"contactSubmitButton"="Soumettre";
+"contactQuestion"="Questionne";
+"contactAPIToast"="Message en course d'envoyé";
+
 
 "question1" = "Questione 1";
 "question2" = "Questione 2";
@@ -21,4 +29,7 @@
 "answer3" = "Réponse 3";
 "answer4" = "Réponse 4";
 
-
+"quoteArea"="Aire";
+"quoteObstructions"="Obstructions";
+"quoteGetQuoteButton"="Obtenir un devis";
+"quoteAPIToast"="Message en course d'envoyé";
