@@ -7,12 +7,13 @@
 
 import SwiftUI
 import ToastUI
+import Combine
 
 struct Quote: View {
     @State var area = ""
     @State var obstructions = ""
     @State private var presentingToast: Bool = false
-    var apiRequest = ApiRequest()
+    @ObservedObject var apiRequest = QuoteApiRequest()
     
     var body: some View {
         
@@ -46,9 +47,15 @@ struct Quote: View {
                   }
                 .disabled(area.isEmpty || obstructions.isEmpty)
 
+                Section (header: Text(NSLocalizedString("quoteCost", comment: ""))) {
+                    TextField("", text: $apiRequest.quoteResponse.quote)
+                }
         
             }
             .navigationBarTitle(NSLocalizedString("quote", comment: ""))
+            .onReceive(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=Publisher@*/NotificationCenter.default.publisher(for: .NSCalendarDayChanged)/*@END_MENU_TOKEN@*/, perform: { _ in
+                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=code@*/ /*@END_MENU_TOKEN@*/
+            })
 
         }
         
@@ -63,7 +70,7 @@ struct Quote: View {
         
         presentingToast = true;
         
-        apiRequest.postQuote(quoteRequest: quoteRequest(area: area, obstruction: obstructions), path: "quote")
+        apiRequest.postQuote(quoteRequest: quoteRequest(area: area, obstruction: obstructions), path: "calculations")
         print("Submitted")
     }
 }

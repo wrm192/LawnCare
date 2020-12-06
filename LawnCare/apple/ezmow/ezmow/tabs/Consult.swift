@@ -58,6 +58,7 @@ struct Consult: View {
       }
 
     func buttonAction() {
+     
         //print("consult button psuhed")
         presentingToast = true;
 
@@ -66,7 +67,6 @@ struct Consult: View {
     }
 
 }
-
 
 struct Consult_Previews: PreviewProvider {
     static var previews: some View {
