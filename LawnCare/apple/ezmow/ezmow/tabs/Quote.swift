@@ -81,6 +81,21 @@ struct Quote: View {
         apiRequest.postQuote(quoteRequest: quoteRequest(area: area, obstruction: obstructions), path: "calculations")
         print("Submitted")
     }
+    
+    func validArea() -> Bool {
+        if ((area.isInt) && (area.count > 0)) {
+            return true
+        }
+        return false
+        
+    }
+    
+    func validObstructions() -> Bool {
+        if ((obstructions.isInt) && (obstructions.count > 0)) {
+            return true
+        }
+        return false
+    }
 }
 
 struct Quote_Previews: PreviewProvider {

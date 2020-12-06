@@ -65,6 +65,34 @@ struct Contact: View {
         
         apiRequest.postContact(contactRequest: ContactRequest(name: name, comment: textField, contactDetails: email), path: "contact")
     }
+    
+    func validName() -> Bool {
+        return name.count > 0
+    }
+    
+    func validPhoneNumb() -> Bool {
+        if ((phoneNumb.isInt) && (phoneNumb.count > 0)) {
+            return true
+        }
+        return false
+    }
+
+    
+    func validEmail() -> Bool {
+        return email.count > 0
+    }
+    
+    
+    func validEmailAdress() -> Bool {
+        if (email.contains("@")) {
+            return true
+        }
+        return false
+    }
+    
+    func validTextField() -> Bool {
+        return textField.count > 0
+    }
 }
 
 
