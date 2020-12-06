@@ -59,7 +59,7 @@ struct Quote: View {
                     ToastView(NSLocalizedString("quoteAPIToast", comment: ""))
                       .toastViewStyle(IndefiniteProgressToastViewStyle())
                   }
-                .disabled(area.isEmpty || obstructions.isEmpty)
+                .disabled(!area.isInt || !obstructions.isInt)
 
                 Section (header: Text(NSLocalizedString("quoteCost", comment: ""))) {
                     TextField("", text: $apiRequest.quoteResponse.quote)
