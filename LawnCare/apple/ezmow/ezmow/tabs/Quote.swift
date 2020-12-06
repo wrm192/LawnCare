@@ -9,12 +9,6 @@ import SwiftUI
 import ToastUI
 import Combine
 
-extension String {
-    var isInt: Bool {
-        return Int(self) != nil
-    }
-}
-
 struct Quote: View {
     @State var area = ""
     @State var obstructions = ""
