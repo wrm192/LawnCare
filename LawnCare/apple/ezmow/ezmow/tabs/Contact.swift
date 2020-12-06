@@ -71,6 +71,8 @@ struct Contact: View {
                     ToastView(NSLocalizedString("contactAPIToast", comment: ""))
                       .toastViewStyle(IndefiniteProgressToastViewStyle())
                   }
+                .disabled(name.isEmpty || phoneNumb.isEmpty || email.isEmpty || textField.isEmpty)
+
                
             }.navigationBarTitle(NSLocalizedString("contact", comment: ""))
         }
