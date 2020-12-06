@@ -8,6 +8,12 @@
 import SwiftUI
 import ToastUI
 
+extension String {
+    var isInt: Bool {
+        return Int(self) != nil
+    }
+}
+
 struct Consult: View {
     @State var name = ""
     @State var phoneNumb = ""
@@ -64,6 +70,18 @@ struct Consult: View {
 
         apiRequest.postConsult(consultRequest: ConsultRequest(name: name, phoneNumber: phoneNumb, address: address), path: "book-now")
         print("Submitted")
+    }
+    
+    func validName() -> Bool {
+        return name.count > 0
+    }
+    
+    func validPhoneNumb() -> Bool {
+        return phoneNumb.isInt
+    }
+    
+    func validAdress() -> Bool {
+        return address.count > 0
     }
 
 }
