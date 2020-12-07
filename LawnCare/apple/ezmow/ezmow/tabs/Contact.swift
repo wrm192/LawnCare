@@ -22,18 +22,33 @@ struct Contact: View {
         NavigationView{
             Form {
             
-                Section {
-                    TextField(NSLocalizedString("contactName", comment: ""), text:
-                                $name)
+                Section (header: Text(NSLocalizedString("contactName", comment: ""))){
+                              TextField(NSLocalizedString("contactName", comment: ""), text:
+                                              $name)
+                }
 
-                    TextField(NSLocalizedString("contactPhoneNumber", comment: ""), text: $phoneNumb)
-                    
-                    TextField(NSLocalizedString("contactAddress", comment: ""), text: $email)
-                    RadioButtonGroups {
-                    selected in print("Selected Choice: \(selected)")
-                    }
+                Section (
+                  header: Text(NSLocalizedString("contactPhoneNumber", comment: ""))) {
+                  TextField(NSLocalizedString("contactPhoneNumber", comment: ""),
+                  text: $phoneNumb)
+                  .keyboardType(.decimalPad)
+                }
+
+                Section (
+                  header: Text(NSLocalizedString("contactAddress", comment: ""))) {
+                  TextField(NSLocalizedString("contactAddress", comment: ""),
+                  text: $email)
+                }
+                
+                Section(
+                  header: Text(NSLocalizedString("contactMethod", comment: ""))) {
+                  RadioButtonGroups {
+                  selected in print("Selected Choice: \(selected)")
+                  }
+                }
+                Section  (header: Text(NSLocalizedString("contactMethod", comment: ""))){
                     MultilineTextView(text: $textField)
-                 }
+                }
                 
                 
                 Section {
