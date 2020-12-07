@@ -46,7 +46,7 @@ struct Contact: View {
                   selected in print("Selected Choice: \(selected)")
                   }
                 }
-                Section  (header: Text(NSLocalizedString("contactMethod", comment: ""))){
+                Section  (header: Text(NSLocalizedString("contactQuestion", comment: ""))){
                     MultilineTextView(text: $textField)
                 }
                 
@@ -113,6 +113,7 @@ struct Contact: View {
 
 
 struct MultilineTextView: UIViewRepresentable {
+    
 //    @Binding var text: String
 //
 //    func makeUIView(context: Context) -> UITextView {
