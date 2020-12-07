@@ -223,14 +223,14 @@ struct RadioButtonGroups: View {
     var radioNumberButton: some View {
         RadioButtonField (
             id: Choice.phoneNumb.rawValue,
-            label: Choice.phoneNumb.rawValue,
+            label: NSLocalizedString("contactPhoneNumber", comment: ""),
             isMarked: selectedId == Choice.phoneNumb.rawValue ? true : false,
             callback: radioGroupCallback)
         }
     var radioEmailButton: some View {
         RadioButtonField (
             id: Choice.email.rawValue,
-            label: Choice.email.rawValue,
+            label: NSLocalizedString("contactAddress", comment: ""),
             isMarked: selectedId == Choice.email.rawValue ? true : false,
             callback: radioGroupCallback)
         }
