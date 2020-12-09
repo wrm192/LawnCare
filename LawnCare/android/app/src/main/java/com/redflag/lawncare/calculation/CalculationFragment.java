@@ -71,6 +71,7 @@ public class CalculationFragment extends Fragment {
         submit1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                et_1.setText("");
                 et_1.setEnabled(true);
                 rb_1.setChecked(true);
 
@@ -83,9 +84,15 @@ public class CalculationFragment extends Fragment {
                 rb_5.setEnabled(false);
                 rb_6.setEnabled(false);
                 rb_7.setEnabled(false);
-                List<Obstruction> obstruction=new ArrayList<Obstruction>();
+                obstruction.clear();
                 hListViewAdapter = new HorizontalListViewAdapter(getActivity(), obstruction);
                 listview.setAdapter(hListViewAdapter);
+
+            }
+        });
+        rb_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
             }
         });
@@ -100,6 +107,13 @@ public class CalculationFragment extends Fragment {
 
                     }catch (Exception e){
                         numb=0.0;
+
+                        AlertDialog alertDialog1 = new AlertDialog.Builder(Objects.requireNonNull(getActivity()))
+                                .setTitle("Error!")//标题
+                                .setMessage("Lawn size is 0!")//内容
+                                .create();
+                        alertDialog1.show();
+                        return;
                     }
 
                 }else if(rb_4.isChecked()){
@@ -120,7 +134,7 @@ public class CalculationFragment extends Fragment {
                 for (int i =0;i<obstruction.size();i++){
                     System.out.println(obstruction.get(i).getPersonName()+","+obstruction.get(i).getPersonAddress()+","+obstruction.get(i).getPersonNumb());
                     if (obstruction.get(i).getPersonName().equals("tree")){
-                        lawn_numb+=tree*obstruction.get(i).getPersonNumb();
+                        lawn_numb+=obstruction.get(i).getPersonNumb();
 
                     }else{
                         lawn_numb+=obstruction.get(i).getPersonNumb();
@@ -132,6 +146,7 @@ public class CalculationFragment extends Fragment {
                 BigDecimal num1 = new BigDecimal((numb-lawn_numb)*15);
                 String lawn4=String.format("Estimated Price:$%s", num1);
                 List<String> lawn = new ArrayList<String>();
+
                 lawn.add(lawn1);
                 lawn.add(lawn2);
                 lawn.add(lawn3);
@@ -286,6 +301,7 @@ public class CalculationFragment extends Fragment {
         textView6.setText(strs.get(1));
         textView7.setText(strs.get(2));
         textView8.setText(strs.get(3));
+
         String data =strs.get(0)+"\n"+strs.get(1)+"\n"+strs.get(2)+"\n"+strs.get(3)+"\n";
         floatingActionButton2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -303,14 +319,12 @@ public class CalculationFragment extends Fragment {
                 ClipboardManager clipboard;
                 clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
 
-                // 创建一个剪贴数据集，包含一个普通文本数据条目（需要复制的数据）,其他的还有
                 // newHtmlText、
                 // newIntent、
                 // newUri、
                 // newRawUri
                 ClipData clipData = ClipData.newPlainText(null, data);
 
-                // 把数据集设置（复制）到剪贴板
                 assert clipboard != null;
                 clipboard.setPrimaryClip(clipData);
                 //... To-do

@@ -55,7 +55,8 @@
                             android:layout_height="57dp"
                             android:checked="true"
                             android:text="@string/quote_lawn_size"
-                            android:textSize="24sp" />
+                            android:textSize="24sp"
+                            />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -112,23 +113,26 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="match_parent"
                                         android:layout_margin="20px"
-                                        android:layout_weight="1"
-                                        android:background="@drawable/small"
-                                        android:button="@drawable/button_states"
+                                        android:layout_weight="2"
+                                        android:background="@drawable/r1_checked"
+                                        android:button="@drawable/back_radio"
                                         android:checked="false"
+                                        android:editable="false"
                                         android:enabled="false"
-                                        android:editable="false" />
+                                        android:padding="5px"
+                                        android:selectAllOnFocus="false" />
 
                                     <RadioButton
                                         android:id="@+id/radioButton5"
                                         android:layout_width="wrap_content"
                                         android:layout_height="match_parent"
                                         android:layout_margin="20px"
-                                        android:layout_weight="1"
+                                        android:layout_weight="2"
+                                        android:background="@drawable/r2_checked"
+                                        android:button="@drawable/back_radio"
+                                        android:editable="false"
                                         android:enabled="false"
-                                        android:background="@drawable/medium"
-                                        android:button="@drawable/button_states"
-                                        android:editable="false" />
+                                        android:padding="5px" />
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -141,24 +145,27 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="match_parent"
                                         android:layout_margin="20px"
-                                        android:layout_weight="1"
-                                        android:enabled="false"
+                                        android:layout_weight="2"
+                                        android:background="@drawable/r3_checked"
 
-                                        android:background="@drawable/large"
-                                        android:button="@drawable/button_states"
-                                        android:editable="false" />
+                                        android:button="@drawable/back_radio"
+                                        android:editable="false"
+                                        android:enabled="false"
+                                        android:padding="5px" />
 
                                     <RadioButton
                                         android:id="@+id/radioButton7"
                                         android:layout_width="wrap_content"
                                         android:layout_height="match_parent"
                                         android:layout_margin="20px"
-                                        android:layout_weight="1"
-                                        android:enabled="false"
+                                        android:layout_weight="2"
+                                        android:background="@drawable/r4_checked"
 
-                                        android:background="@drawable/huge"
-                                        android:button="@drawable/button_states"
-                                        android:editable="false" />
+                                        android:button="@drawable/back_radio"
+                                        android:checked="false"
+                                        android:editable="false"
+                                        android:enabled="false"
+                                        android:padding="5px" />
                                 </LinearLayout>
                             </LinearLayout>
                         </RadioGroup>
