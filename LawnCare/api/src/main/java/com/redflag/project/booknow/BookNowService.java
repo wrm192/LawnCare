@@ -11,7 +11,7 @@ public class BookNowService {
     @Autowired
     EmailService emailService;
 
-    BookNowService(EmailService emailService){
+    public BookNowService(EmailService emailService){
         this.emailService = emailService;
     }
 

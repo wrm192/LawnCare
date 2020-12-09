@@ -10,8 +10,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmailServiceImpl implements EmailService {
 
-    @Autowired
     private JavaMailSender emailSender;
+
+    @Autowired
+    public EmailServiceImpl(JavaMailSender emailSender) {
+        this.emailSender = emailSender;
+    }
 
     private static final String NOREPLY_ADDRESS = "noreply@redflag.com";
     private static final String TO_EMAIL = "wrm192@gmail.com"; // should be jaysons
