@@ -16,7 +16,7 @@ public class BookNowController {
 
     private BookNowService bookNowService;
 
-    BookNowController(BookNowService bookNowService){
+    public BookNowController(BookNowService bookNowService){
         this.bookNowService = bookNowService;
     }
 
