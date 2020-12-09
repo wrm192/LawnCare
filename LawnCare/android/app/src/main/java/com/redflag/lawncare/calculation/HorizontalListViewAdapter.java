@@ -70,9 +70,14 @@ public class HorizontalListViewAdapter extends BaseAdapter {
         mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);//LayoutInflater.from(mContext);
     }
     public void newObstruction(){
-        Obstruction obs = new Obstruction(this.mobstruction.size()+1+"","Tree","Qty",0);
-        this.mobstruction.add(obs);
-        notifyDataSetChanged();
+        if( this.mobstruction.size()<5 ){
+            Obstruction obs = new Obstruction(this.mobstruction.size()+1+"","Tree","Qty",0);
+            this.mobstruction.add(obs);
+            notifyDataSetChanged();
+
+        }else {
+
+        }
 
     }
     @Override
@@ -127,8 +132,8 @@ public class HorizontalListViewAdapter extends BaseAdapter {
         }
 
         holder.editText2.setTag(position);
-        holder.editText2.setText(String.valueOf(mobstruction.get(position).getPersonNumb()));
-        holder.textView3.setText(mobstruction.get(position).getPersonAddress());
+        //holder.editText2.setText(String.valueOf(mobstruction.get(position).getPersonNumb()));
+        //holder.textView3.setText(mobstruction.get(position).getPersonAddress());
 
         holder.editText2.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -151,13 +156,19 @@ public class HorizontalListViewAdapter extends BaseAdapter {
                     }
             }
         });
-        convertView.setTag(R.id.item_root, position);
+        holder.floatingActionButton.setTag(position);
 
         holder.floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 System.out.println(position);
+
+                int position = (Integer) holder.floatingActionButton.getTag();
                 mobstruction.remove(position);
+                for (int k =0;k<mobstruction.size();k++){
+                    System.out.println("mobstruction"+k+mobstruction.get(k).getPersonName()+","+mobstruction.get(k).getPersonAddress()+","+mobstruction.get(k).getPersonNumb());
+                }
+
                 notifyDataSetChanged();
 
             }
@@ -204,7 +215,7 @@ public class HorizontalListViewAdapter extends BaseAdapter {
                     try {
                         dataDB = Double.parseDouble(holder.editText2.getText().toString());
 
-                    }catch (Exception e){
+                    }catch (Exception e){ 
                         dataDB=0.0;
                     }
                     mobstruction.get(position).setPersonNumb(dataDB);
@@ -216,10 +227,24 @@ public class HorizontalListViewAdapter extends BaseAdapter {
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
+            public void getMobstruction(){
+                holder.editText2.getText();
+            }
         });
-        holder.editText2.setText(holder.editText2.getText().toString());
+        //holder.editText2.setText(holder.editText2.getText().toString());
 
         holder.editText2.setTag(position);
+        int positions = (Integer) holder.editText2.getTag();
+
+        for (int k =0;k<mobstruction.size();k++){
+
+            if (positions ==k){
+                holder.editText2.setText(String.valueOf(mobstruction.get(k).getPersonNumb()));
+            }
+
+            System.out.println("mobstruction"+k+mobstruction.get(k).getPersonName()+","+mobstruction.get(k).getPersonAddress()+","+mobstruction.get(k).getPersonNumb());
+        }
+
         holder.editText2.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -231,9 +256,12 @@ public class HorizontalListViewAdapter extends BaseAdapter {
 
             }
 
+
+            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             public void afterTextChanged(Editable editable) {
 
+                int x =-1;
 
                 double dataDB;
                 try {
@@ -243,12 +271,14 @@ public class HorizontalListViewAdapter extends BaseAdapter {
                     dataDB=0.0;
 
                 }
-
+                int position = (Integer) holder.editText2.getTag();
+                System.out.println(position);
                 mobstruction.get(position).setPersonNumb(dataDB);
                 for (int k =0;k<mobstruction.size();k++){
-                    System.out.println(mobstruction.get(k).getPersonName()+","+mobstruction.get(k).getPersonAddress()+","+mobstruction.get(k).getPersonNumb());
+                        System.out.println("mobstruction"+k+mobstruction.get(k).getPersonName()+","+mobstruction.get(k).getPersonAddress()+","+mobstruction.get(k).getPersonNumb());
 
                 }
+
 
                 //onInputTextListener.afterChangedText(mobstruction.get(pos).getPersonNumb()+"", count + "");
 
@@ -268,6 +298,9 @@ public class HorizontalListViewAdapter extends BaseAdapter {
 
     public void setSelectIndex(int i) {
         selectIndex = i;
+    }
+    public void getEditTextList(){
+
     }
 
 }
